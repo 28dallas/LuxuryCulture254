@@ -6,11 +6,13 @@ import { Button } from '@/components/ui/Button'
 import { MpesaPayment } from '@/components/payment/MpesaPayment'
 import { CardPayment } from '@/components/payment/CardPayment'
 import { PayPalPayment } from '@/components/payment/PayPalPayment'
+import { PaystackPayment } from '@/components/payment/PaystackPayment'
 import { Lock, Shield, CreditCard } from 'lucide-react'
 
 export default function CheckoutPage() {
   const { items, getTotalPrice, clearCart } = useCartStore()
-  const [selectedPayment, setSelectedPayment] = useState<'mpesa' | 'card' | 'paypal'>('mpesa')
+  const [selectedPayment, setSelectedPayment] = useState<'mpesa' | 'card' | 'paypal' | 'paystack'>('mpesa')
+  const [selectedCountry, setSelectedCountry] = useState<'kenya' | 'nigeria' | 'international'>('kenya')
   const [orderInfo, setOrderInfo] = useState({
     email: '',
     firstName: '',
@@ -217,9 +219,35 @@ export default function CheckoutPage() {
                     <input
                       type="radio"
                       name="payment"
+                      value="paystack"
+                      checked={selectedPayment === 'paystack'}
+                      onChange={(e) => {
+                        setSelectedPayment(e.target.value as 'paystack')
+                        setSelectedCountry('nigeria')
+                      }}
+                      className="mr-3"
+                    />
+                    <div className="flex items-center space-x-3">
+                      <div className="bg-green-500 text-white p-2 rounded">
+                        <CreditCard size={20} />
+                      </div>
+                      <div>
+                        <p className="font-medium">🇳🇬 Paystack (Nigeria)</p>
+                        <p className="text-sm text-secondary-600">Cards, Bank Transfer, USSD, Mobile Money</p>
+                      </div>
+                    </div>
+                  </label>
+
+                  <label className="flex items-center p-4 border border-secondary rounded-lg cursor-pointer hover:bg-secondary-50 transition-colors">
+                    <input
+                      type="radio"
+                      name="payment"
                       value="paypal"
                       checked={selectedPayment === 'paypal'}
-                      onChange={(e) => setSelectedPayment(e.target.value as 'paypal')}
+                      onChange={(e) => {
+                        setSelectedPayment(e.target.value as 'paypal')
+                        setSelectedCountry('international')
+                      }}
                       className="mr-3"
                     />
                     <div className="flex items-center space-x-3">
@@ -248,6 +276,21 @@ export default function CheckoutPage() {
                       total={total}
                       orderInfo={orderInfo}
                       onSuccess={() => clearCart()}
+                    />
+                  )}
+                  {selectedPayment === 'paystack' && (
+                    <PaystackPayment 
+                      amount={Math.round(total * 0.75)} // Convert KES to NGN approximately
+                      email={orderInfo.email}
+                      onSuccess={(reference) => {
+                        console.log('Payment successful:', reference)
+                        clearCart()
+                        window.location.href = '/order/success'
+                      }}
+                      onError={(error) => {
+                        console.error('Payment failed:', error)
+                        alert('Payment failed: ' + error)
+                      }}
                     />
                   )}
                   {selectedPayment === 'paypal' && (

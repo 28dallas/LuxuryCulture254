@@ -51,8 +51,13 @@ export function Header() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
+            <img
+              src="/logo2.png"
+              alt="Shop JR Logo"
+              className="h-20 w-auto"
+            />
             <div className="bg-accent text-primary px-3 py-2 rounded-lg font-display font-bold text-xl lg:text-2xl">
-              SHOP JR
+              LUXURY CULTURE
             </div>
           </Link>
 
@@ -114,6 +119,8 @@ export function Header() {
                 </span>
               )}
             </Link>
+
+
           </div>
         </div>
 

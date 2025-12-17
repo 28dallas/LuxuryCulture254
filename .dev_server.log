@@ -8,31 +8,219 @@ nohup: ignoring input
   - Environments: .env.local
 
  ✓ Starting...
- ✓ Ready in 2.6s
+ ✓ Ready in 3.5s
  ○ Compiling / ...
-(node:31624) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(node:11522) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
 (Use `node --trace-deprecation ...` to show where the warning was created)
- ✓ Compiled / in 6.8s (711 modules)
+ ✓ Compiled / in 5.4s (711 modules)
  ⚠ Unsupported metadata viewport is configured in metadata export in /. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
- ✓ Compiled in 1219ms (344 modules)
+ ✓ Compiled in 755ms (344 modules)
+ GET / 200 in 6327ms
  ⚠ Unsupported metadata viewport is configured in metadata export in /. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
- HEAD / 200 in 103ms
+ HEAD / 200 in 99ms
  ⚠ Unsupported metadata viewport is configured in metadata export in /. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
- GET / 200 in 192ms
+ GET / 200 in 196ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
  ○ Compiling /_not-found ...
- ✓ Compiled /_not-found in 506ms (682 modules)
+ ✓ Compiled /_not-found in 547ms (682 modules)
  ⚠ Unsupported metadata viewport is configured in metadata export in /api/auth/session. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+ ⚠ Unsupported metadata viewport is configured in metadata export in /. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
  ⚠ Unsupported metadata viewport is configured in metadata export in /api/auth/session. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
- GET /api/auth/session 404 in 733ms
- GET /api/auth/session 404 in 54ms
+ GET /api/auth/session 404 in 1139ms
+ GET /api/auth/session 404 in 103ms
  ⚠ Unsupported metadata viewport is configured in metadata export in /api/auth/_log. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
  ⚠ Unsupported metadata viewport is configured in metadata export in /api/auth/_log. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
- POST /api/auth/_log 404 in 59ms
- POST /api/auth/_log 404 in 45ms
+ GET / 200 in 925ms
+ POST /api/auth/_log 404 in 157ms
+ POST /api/auth/_log 404 in 107ms
+ ⚠ Unsupported metadata viewport is configured in metadata export in /api/auth/session. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+ ⚠ Unsupported metadata viewport is configured in metadata export in /api/auth/session. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+ GET /api/auth/session 404 in 81ms
+ GET /api/auth/session 404 in 58ms
+ ⚠ Unsupported metadata viewport is configured in metadata export in /api/auth/_log. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+ ⚠ Unsupported metadata viewport is configured in metadata export in /api/auth/session. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+ ⚠ Unsupported metadata viewport is configured in metadata export in /api/auth/_log. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+ POST /api/auth/_log 404 in 96ms
+ GET /api/auth/session 404 in 94ms
+ POST /api/auth/_log 404 in 33ms
+ ⚠ Unsupported metadata viewport is configured in metadata export in /api/auth/_log. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+ POST /api/auth/_log 404 in 24ms
+ ✓ Compiled in 649ms (344 modules)
+ ✓ Compiled /_not-found in 339ms (682 modules)
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 2.9s (906 modules)
+ ⚠ Unsupported metadata viewport is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+ ⚠ Unsupported metadata viewport is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+ ⚠ Unsupported metadata viewport is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+ ⚠ Unsupported metadata viewport is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+ ⚠ Unsupported metadata viewport is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+ ⚠ Unsupported metadata viewport is configured in metadata export in /_next/static/css/app/layout.css. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+ GET /_next/static/css/app/layout.css?v=1765948193360 404 in 227ms
+ ⚠ Unsupported metadata viewport is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+ GET / 200 in 399ms
+ ⚠ Unsupported metadata viewport is configured in metadata export in /_next/static/css/app/layout.css. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+ GET /_next/static/css/app/layout.css?v=1765948193659 404 in 79ms
+ ⚠ Unsupported metadata viewport is configured in metadata export in /_next/static/chunks/main-app.js. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+ GET /_next/static/chunks/main-app.js?v=1765948193659 404 in 47ms
+ ⚠ Unsupported metadata viewport is configured in metadata export in /_next/static/chunks/app-pages-internals.js. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+ ⚠ Unsupported metadata viewport is configured in metadata export in /_next/static/chunks/app/page.js. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+ GET /_next/static/chunks/app-pages-internals.js 404 in 49ms
+ GET /_next/static/chunks/app/page.js 404 in 49ms
+ ✓ Compiled in 1138ms (906 modules)
+ ⚠ Unsupported metadata viewport is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+ ⚠ Unsupported metadata viewport is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+ ⚠ Unsupported metadata viewport is configured in metadata export in /_next/static/css/app/layout.css. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+ GET /_next/static/css/app/layout.css?v=1765948196725 404 in 176ms
+ ✓ Compiled in 736ms (906 modules)
+ ⚠ Unsupported metadata viewport is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+ ⚠ Unsupported metadata viewport is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+ ⚠ Unsupported metadata viewport is configured in metadata export in /_next/static/css/app/layout.css. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+ GET /_next/static/css/app/layout.css?v=1765948204097 404 in 65ms
+ ✓ Compiled in 382ms (529 modules)
+ ⚠ Unsupported metadata viewport is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+ ⚠ Unsupported metadata viewport is configured in metadata export in /_next/static/css/app/layout.css. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+ GET /_next/static/css/app/layout.css?v=1765948215813 404 in 59ms
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat '/home/nathan/Documents/SHOP JR/.next/server/vendor-chunks/clsx.js'
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/clsx' in /home/nathan/Documents/SHOP JR/.next/server for build dependencies doesn't lead to expected result '/home/nathan/Documents/SHOP JR/.next/server/vendor-chunks/clsx.js', but to 'Error: Can't resolve './vendor-chunks/clsx' in '/home/nathan/Documents/SHOP JR/.next/server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/clsx (expected /home/nathan/Documents/SHOP JR/.next/server/vendor-chunks/clsx.js)
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/.next/server/webpack-runtime.js
+<w>  at file /home/nathan/Documents/SHOP JR/.next/server/webpack-runtime.js
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/.next/server/app/page.js
+<w>  at file /home/nathan/Documents/SHOP JR/.next/server/app/page.js
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/node_modules/next/dist/server/require.js
+<w>  at file /home/nathan/Documents/SHOP JR/node_modules/next/dist/server/require.js
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/node_modules/next/dist/server/load-components.js
+<w>  at file /home/nathan/Documents/SHOP JR/node_modules/next/dist/server/load-components.js
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/node_modules/next/dist/build/utils.js
+<w>  at file /home/nathan/Documents/SHOP JR/node_modules/next/dist/build/utils.js
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at file /home/nathan/Documents/SHOP JR/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at resolve commonjs /home/nathan/Documents/SHOP JR/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/tailwind-merge' in /home/nathan/Documents/SHOP JR/.next/server for build dependencies doesn't lead to expected result '/home/nathan/Documents/SHOP JR/.next/server/vendor-chunks/tailwind-merge.js', but to 'Error: Can't resolve './vendor-chunks/tailwind-merge' in '/home/nathan/Documents/SHOP JR/.next/server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/tailwind-merge (expected /home/nathan/Documents/SHOP JR/.next/server/vendor-chunks/tailwind-merge.js)
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/.next/server/webpack-runtime.js
+<w>  at file /home/nathan/Documents/SHOP JR/.next/server/webpack-runtime.js
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/.next/server/app/page.js
+<w>  at file /home/nathan/Documents/SHOP JR/.next/server/app/page.js
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/node_modules/next/dist/server/require.js
+<w>  at file /home/nathan/Documents/SHOP JR/node_modules/next/dist/server/require.js
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/node_modules/next/dist/server/load-components.js
+<w>  at file /home/nathan/Documents/SHOP JR/node_modules/next/dist/server/load-components.js
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/node_modules/next/dist/build/utils.js
+<w>  at file /home/nathan/Documents/SHOP JR/node_modules/next/dist/build/utils.js
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at file /home/nathan/Documents/SHOP JR/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at resolve commonjs /home/nathan/Documents/SHOP JR/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/goober' in /home/nathan/Documents/SHOP JR/.next/server for build dependencies doesn't lead to expected result '/home/nathan/Documents/SHOP JR/.next/server/vendor-chunks/goober.js', but to 'Error: Can't resolve './vendor-chunks/goober' in '/home/nathan/Documents/SHOP JR/.next/server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/goober (expected /home/nathan/Documents/SHOP JR/.next/server/vendor-chunks/goober.js)
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/.next/server/webpack-runtime.js
+<w>  at file /home/nathan/Documents/SHOP JR/.next/server/webpack-runtime.js
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/.next/server/app/page.js
+<w>  at file /home/nathan/Documents/SHOP JR/.next/server/app/page.js
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/node_modules/next/dist/server/require.js
+<w>  at file /home/nathan/Documents/SHOP JR/node_modules/next/dist/server/require.js
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/node_modules/next/dist/server/load-components.js
+<w>  at file /home/nathan/Documents/SHOP JR/node_modules/next/dist/server/load-components.js
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/node_modules/next/dist/build/utils.js
+<w>  at file /home/nathan/Documents/SHOP JR/node_modules/next/dist/build/utils.js
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at file /home/nathan/Documents/SHOP JR/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at resolve commonjs /home/nathan/Documents/SHOP JR/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/use-sync-external-store' in /home/nathan/Documents/SHOP JR/.next/server for build dependencies doesn't lead to expected result '/home/nathan/Documents/SHOP JR/.next/server/vendor-chunks/use-sync-external-store.js', but to 'Error: Can't resolve './vendor-chunks/use-sync-external-store' in '/home/nathan/Documents/SHOP JR/.next/server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/use-sync-external-store (expected /home/nathan/Documents/SHOP JR/.next/server/vendor-chunks/use-sync-external-store.js)
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/.next/server/webpack-runtime.js
+<w>  at file /home/nathan/Documents/SHOP JR/.next/server/webpack-runtime.js
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/.next/server/app/page.js
+<w>  at file /home/nathan/Documents/SHOP JR/.next/server/app/page.js
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/node_modules/next/dist/server/require.js
+<w>  at file /home/nathan/Documents/SHOP JR/node_modules/next/dist/server/require.js
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/node_modules/next/dist/server/load-components.js
+<w>  at file /home/nathan/Documents/SHOP JR/node_modules/next/dist/server/load-components.js
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/node_modules/next/dist/build/utils.js
+<w>  at file /home/nathan/Documents/SHOP JR/node_modules/next/dist/build/utils.js
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at file /home/nathan/Documents/SHOP JR/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at resolve commonjs /home/nathan/Documents/SHOP JR/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/react-hot-toast' in /home/nathan/Documents/SHOP JR/.next/server for build dependencies doesn't lead to expected result '/home/nathan/Documents/SHOP JR/.next/server/vendor-chunks/react-hot-toast.js', but to 'Error: Can't resolve './vendor-chunks/react-hot-toast' in '/home/nathan/Documents/SHOP JR/.next/server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/react-hot-toast (expected /home/nathan/Documents/SHOP JR/.next/server/vendor-chunks/react-hot-toast.js)
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/.next/server/webpack-runtime.js
+<w>  at file /home/nathan/Documents/SHOP JR/.next/server/webpack-runtime.js
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/.next/server/app/page.js
+<w>  at file /home/nathan/Documents/SHOP JR/.next/server/app/page.js
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/node_modules/next/dist/server/require.js
+<w>  at file /home/nathan/Documents/SHOP JR/node_modules/next/dist/server/require.js
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/node_modules/next/dist/server/load-components.js
+<w>  at file /home/nathan/Documents/SHOP JR/node_modules/next/dist/server/load-components.js
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/node_modules/next/dist/build/utils.js
+<w>  at file /home/nathan/Documents/SHOP JR/node_modules/next/dist/build/utils.js
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at file /home/nathan/Documents/SHOP JR/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at resolve commonjs /home/nathan/Documents/SHOP JR/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/lucide-react' in /home/nathan/Documents/SHOP JR/.next/server for build dependencies doesn't lead to expected result '/home/nathan/Documents/SHOP JR/.next/server/vendor-chunks/lucide-react.js', but to 'Error: Can't resolve './vendor-chunks/lucide-react' in '/home/nathan/Documents/SHOP JR/.next/server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/lucide-react (expected /home/nathan/Documents/SHOP JR/.next/server/vendor-chunks/lucide-react.js)
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/.next/server/webpack-runtime.js
+<w>  at file /home/nathan/Documents/SHOP JR/.next/server/webpack-runtime.js
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/.next/server/app/page.js
+<w>  at file /home/nathan/Documents/SHOP JR/.next/server/app/page.js
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/node_modules/next/dist/server/require.js
+<w>  at file /home/nathan/Documents/SHOP JR/node_modules/next/dist/server/require.js
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/node_modules/next/dist/server/load-components.js
+<w>  at file /home/nathan/Documents/SHOP JR/node_modules/next/dist/server/load-components.js
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/node_modules/next/dist/build/utils.js
+<w>  at file /home/nathan/Documents/SHOP JR/node_modules/next/dist/build/utils.js
+<w>  at file dependencies /home/nathan/Documents/SHOP JR/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at file /home/nathan/Documents/SHOP JR/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at resolve commonjs /home/nathan/Documents/SHOP JR/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+ ✓ Compiled in 642ms (528 modules)
+ ⚠ Unsupported metadata viewport is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+   Reload env: .env.local
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ✓ Compiled in 7.1s (936 modules)
+ ⚠ Unsupported metadata viewport is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+ ⚠ Unsupported metadata viewport is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+ GET / 200 in 2616ms
+ ⚠ Unsupported metadata viewport is configured in metadata export in /_next/static/chunks/main-app.js. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+ GET /_next/static/chunks/main-app.js?v=1765948280191 404 in 79ms
+ ⚠ Unsupported metadata viewport is configured in metadata export in /_next/static/chunks/app-pages-internals.js. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+ ⚠ Unsupported metadata viewport is configured in metadata export in /_next/static/chunks/app/page.js. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+ GET /_next/static/chunks/app-pages-internals.js 404 in 104ms
+ GET /_next/static/chunks/app/page.js 404 in 105ms

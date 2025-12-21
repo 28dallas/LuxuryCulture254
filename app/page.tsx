@@ -267,7 +267,7 @@ export default function HomePage() {
               Be the first to cop the latest releases from your favorite brands. 
               Fresh heat, straight to your doorstep.
             </p>
-            <Link href="/shop?filter=new">
+            <Link href="/new-arrivals">
               <Button variant="outline">VIEW ALL NEW ARRIVALS</Button>
             </Link>
           </div>
@@ -284,7 +284,7 @@ export default function HomePage() {
               The most popular kicks that everyone's talking about. 
               These classics never go out of style.
             </p>
-            <Link href="/shop?filter=bestsellers">
+            <Link href="/best-sellers">
               <Button variant="outline">VIEW ALL BESTSELLERS</Button>
             </Link>
           </div>

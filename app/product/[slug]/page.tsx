@@ -103,6 +103,9 @@ export default function ProductDetailPage() {
       price: product.price,
       image: product.images[0],
       size: selectedSize,
+      color: product.colors[0],
+      brand: product.brand,
+      slug: product.slug,
       quantity
     })
 

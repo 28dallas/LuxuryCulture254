@@ -183,7 +183,7 @@ export function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 bg-primary-800 hover:bg-accent hover:text-primary rounded-lg transition-colors"
+                    className="p-2 bg-primary text-secondary hover:bg-accent hover:text-primary rounded-lg transition-colors"
                     aria-label={social.name}
                   >
                     <IconComponent size={18} />

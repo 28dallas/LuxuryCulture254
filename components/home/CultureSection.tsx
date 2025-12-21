@@ -1,6 +1,9 @@
+ 'use client'
+
+import React, { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
-import { ArrowRight, Users, Award, Truck } from 'lucide-react'
+import { ArrowRight, Users, Award, Truck, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const cultureFeatures = [
   {
@@ -51,9 +54,69 @@ const blogPosts = [
 ]
 
 export function CultureSection() {
+  const brands = [
+    { id: 'nike', name: 'Nike' },
+    { id: 'adidas', name: 'Adidas' },
+    { id: 'jordan', name: 'Jordan' },
+    { id: 'converse', name: 'Converse' },
+    { id: 'vans', name: 'Vans' },
+    { id: 'new-balance', name: 'New Balance' },
+    { id: 'puma', name: 'Puma' },
+    { id: 'reebok', name: 'Reebok' },
+  ]
+
+  const [index, setIndex] = useState(0)
+  const visible = 5
+  const total = brands.length
+  const timerRef = useRef<number | null>(null)
+
+  useEffect(() => {
+    timerRef.current = window.setInterval(() => {
+      setIndex((i) => (i + 1) % total)
+    }, 3000)
+    return () => {
+      if (timerRef.current) window.clearInterval(timerRef.current)
+    }
+  }, [total])
+
+  const prev = () => setIndex((i) => (i - 1 + total) % total)
+  const next = () => setIndex((i) => (i + 1) % total)
+
   return (
     <section className="section-padding bg-secondary text-primary">
       <div className="container-custom">
+        {/* Official Retailer */}
+        <div className="text-center mb-10">
+          <h3 className="text-sm font-semibold text-secondary-600 uppercase mb-2">Official Retailer</h3>
+          <p className="text-xl font-bold mb-6">Authorized dealer for premium brands</p>
+
+          <div className="relative mx-auto max-w-4xl">
+            <div className="overflow-hidden">
+              <div
+                className="flex transition-transform duration-500"
+                style={{ transform: `translateX(-${(index / total) * 100}%)` }}
+              >
+                {brands.concat(brands).map((brand, idx) => (
+                  <div key={`${brand.id}-${idx}`} className="w-1/5 px-3">
+                    <div className="bg-primary border border-secondary rounded-xl p-6 h-28 flex flex-col items-center justify-center">
+                      <div className="w-12 h-12 bg-accent/10 text-accent rounded-full flex items-center justify-center font-bold text-sm mb-2">{brand.name[0]}</div>
+                      <div className="text-sm text-secondary-600">{brand.name}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Controls */}
+            <button onClick={prev} aria-label="Previous" className="absolute left-0 top-1/2 -translate-y-1/2 bg-primary border border-secondary p-2 rounded-full shadow-md">
+              <ChevronLeft size={16} />
+            </button>
+            <button onClick={next} aria-label="Next" className="absolute right-0 top-1/2 -translate-y-1/2 bg-primary border border-secondary p-2 rounded-full shadow-md">
+              <ChevronRight size={16} />
+            </button>
+          </div>
+        </div>
+
         {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
           {/* Left Column - Content */}

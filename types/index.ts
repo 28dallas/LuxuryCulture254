@@ -12,12 +12,12 @@ export interface Product {
   colors: string[]
   images: string[]
   inStock: boolean
-  isOnSale: boolean
+  isOnSale?: boolean
   isBestseller?: boolean
   isNewArrival?: boolean
-  tags: string[]
-  createdAt: string
-  updatedAt: string
+  tags?: string[]
+  createdAt?: string
+  updatedAt?: string
 }
 
 export interface CartItem {

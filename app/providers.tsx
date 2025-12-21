@@ -8,8 +8,10 @@ interface ProvidersProps {
   children: React.ReactNode
 }
 
-const initialPayPalOptions = {
+// PayPal expects the key to be 'client-id' in the script options; include a fallback
+const initialPayPalOptions: any = {
   'client-id': process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID || 'test',
+  clientId: process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID || 'test',
   currency: 'USD',
   intent: 'capture',
 }

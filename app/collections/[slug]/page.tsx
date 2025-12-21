@@ -1,14 +1,14 @@
  'use client'
 
-import { useState, useEffect, useMemo } from 'react'
-import { useSearchParams } from 'next/navigation'
+import { useState, useMemo } from 'react'
+import { useParams } from 'next/navigation'
 import { ProductGrid } from '@/components/product/ProductGrid'
+import { CatalogCard } from '@/components/product/CatalogCard'
 import FilterPanel from '@/components/shop/FilterPanel'
 import SortDropdown from '@/components/shop/SortDropdown'
 import { Search, SlidersHorizontal, Grid, List, ChevronLeft, ChevronRight } from 'lucide-react'
-import { mockProducts, brands, categories } from '@/lib/data/products'
+import { mockProducts } from '@/lib/data/products'
 import { Product } from '@/types'
-import { CatalogCard } from '@/components/product/CatalogCard'
 
 interface Filters {
   category: string[]
@@ -21,9 +21,30 @@ interface Filters {
   onSale: boolean
 }
 
-export default function ShopPage() {
-  const searchParams = useSearchParams()
-  const [searchQuery, setSearchQuery] = useState(searchParams.get('search') || '')
+const collectionInfo: Record<string, { name: string; description: string; image: string }> = {
+  footwear: {
+    name: 'Footwear',
+    description: 'Premium sneakers and athletic shoes from the world\'s top brands',
+    image: '/logo2.png'
+  },
+  apparel: {
+    name: 'Apparel',
+    description: 'Streetwear essentials, hoodies, and fashion-forward clothing',
+    image: '/logo2.png'
+  },
+  accessories: {
+    name: 'Accessories',
+    description: 'Complete your look with bags, belts, and lifestyle accessories',
+    image: '/logo2.png'
+  }
+}
+
+export default function CollectionPage() {
+  const params = useParams()
+  const collectionSlug = params.slug as string
+  const collection = collectionInfo[collectionSlug]
+  
+  const [searchQuery, setSearchQuery] = useState('')
   const [showFilters, setShowFilters] = useState(false)
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
   const [sortBy, setSortBy] = useState('featured')
@@ -31,25 +52,25 @@ export default function ShopPage() {
   const itemsPerPage = 12
 
   const [filters, setFilters] = useState<Filters>({
-    category: searchParams.get('category') ? [searchParams.get('category')!] : [],
-    brand: searchParams.get('brand') ? [searchParams.get('brand')!] : [],
+    category: [collectionSlug],
+    brand: [],
     gender: [],
     size: [],
     color: [],
     priceRange: [0, 2000],
     inStock: false,
-    onSale: searchParams.get('sale') === 'true'
+    onSale: false
   })
 
-  // Filter products
+  // Filter products for this collection
   const filteredProducts = useMemo(() => {
     return mockProducts.filter(product => {
+      const matchesCollection = product.category === collectionSlug
       const matchesSearch = !searchQuery || 
         product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         product.brand.toLowerCase().includes(searchQuery.toLowerCase()) ||
         (product.tags?.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase())) ?? false)
       
-      const matchesCategory = filters.category.length === 0 || filters.category.includes(product.category)
       const matchesBrand = filters.brand.length === 0 || filters.brand.includes(product.brand)
       const matchesGender = filters.gender.length === 0 || filters.gender.includes(product.gender)
       const matchesSize = filters.size.length === 0 || product.sizes.some(size => filters.size.includes(size))
@@ -58,10 +79,10 @@ export default function ShopPage() {
       const matchesStock = !filters.inStock || product.inStock
       const matchesSale = !filters.onSale || product.isOnSale
 
-      return matchesSearch && matchesCategory && matchesBrand && matchesGender && 
+      return matchesCollection && matchesSearch && matchesBrand && matchesGender && 
              matchesSize && matchesColor && matchesPrice && matchesStock && matchesSale
     })
-  }, [mockProducts, searchQuery, filters])
+  }, [mockProducts, collectionSlug, searchQuery, filters])
 
   // Sort products
   const sortedProducts = useMemo(() => {
@@ -98,20 +119,21 @@ export default function ShopPage() {
     const categoryCounts: Record<string, number> = {}
     const brandCounts: Record<string, number> = {}
     
-    mockProducts.forEach(product => {
+    const collectionProducts = mockProducts.filter(p => p.category === collectionSlug)
+    collectionProducts.forEach(product => {
       categoryCounts[product.category] = (categoryCounts[product.category] || 0) + 1
       brandCounts[product.brand] = (brandCounts[product.brand] || 0) + 1
     })
     
     return {
-      total: mockProducts.length,
+      total: collectionProducts.length,
       categories: categoryCounts,
       brands: brandCounts
     }
-  }, [mockProducts])
+  }, [mockProducts, collectionSlug])
 
   const handleFilterChange = (newFilters: Filters) => {
-    setFilters(newFilters)
+    setFilters({ ...newFilters, category: [collectionSlug] })
     setCurrentPage(1)
   }
 
@@ -120,30 +142,53 @@ export default function ShopPage() {
     setCurrentPage(1)
   }
 
+  if (!collection) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-gray-900 mb-2">Collection Not Found</h1>
+          <p className="text-gray-600">The collection you're looking for doesn't exist.</p>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <div className="bg-white border-b border-black/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+      {/* Collection Hero */}
+      <div className="bg-black text-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
-              <h1 className="text-3xl font-bold text-black mb-2">Shop All Products</h1>
-              <p className="text-gray-600">
+              <h1 className="text-4xl md:text-6xl font-bold mb-4">{collection.name}</h1>
+              <p className="text-xl text-gray-300 mb-6">{collection.description}</p>
+              <p className="text-gray-400">
                 {sortedProducts.length} {sortedProducts.length === 1 ? 'product' : 'products'}
               </p>
             </div>
-            
-            {/* Search */}
-            <div className="relative w-full lg:w-96">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
-              <input
-                type="text"
-                placeholder="Search products..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-red-500"
+            <div className="aspect-square bg-gray-800 rounded-lg overflow-hidden">
+              <img
+                src={collection.image}
+                alt={collection.name}
+                className="w-full h-full object-cover"
               />
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Search Bar */}
+      <div className="bg-white border-b border-black/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="relative w-full lg:w-96">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+            <input
+              type="text"
+              placeholder={`Search ${collection.name.toLowerCase()}...`}
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-red-500"
+            />
           </div>
         </div>
       </div>
@@ -198,48 +243,43 @@ export default function ShopPage() {
             </div>
 
             {/* Products Grid */}
-            {
-              (() => {
-                const filterParam = searchParams.get('filter')
-
-                if (filterParam === 'new' || filterParam === 'bestsellers') {
-                  const list = mockProducts.filter(p => filterParam === 'new' ? p.isNewArrival : p.isBestseller)
-                  return (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                      {list.map(product => (
-                        <CatalogCard key={product.id} product={product as Product} />
-                      ))}
-                    </div>
-                  )
-                }
-
-                return paginatedProducts.length > 0 ? (
-                  <ProductGrid products={paginatedProducts} viewMode={viewMode} />
-                ) : (
-                  <div className="text-center py-12">
-                    <p className="text-gray-500 text-lg">No products found matching your criteria.</p>
-                    <button
-                      onClick={() => {
-                        setFilters({
-                          category: [],
-                          brand: [],
-                          gender: [],
-                          size: [],
-                          color: [],
-                          priceRange: [0, 2000],
-                          inStock: false,
-                          onSale: false
-                        })
-                        setSearchQuery('')
-                      }}
-                      className="mt-4 px-6 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors"
-                    >
-                      Clear All Filters
-                    </button>
+            {(() => {
+              if (viewMode === 'grid') {
+                return (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    {paginatedProducts.map(p => (
+                      <CatalogCard key={p.id} product={p as import('@/types').Product} />
+                    ))}
                   </div>
                 )
-              })()
-            }
+              }
+
+              return paginatedProducts.length > 0 ? (
+                <ProductGrid products={paginatedProducts} viewMode={viewMode} />
+              ) : (
+                <div className="text-center py-12">
+                  <p className="text-gray-500 text-lg">No products found in this collection.</p>
+                  <button
+                    onClick={() => {
+                      setFilters({
+                        category: [collectionSlug],
+                        brand: [],
+                        gender: [],
+                        size: [],
+                        color: [],
+                        priceRange: [0, 2000],
+                        inStock: false,
+                        onSale: false
+                      })
+                      setSearchQuery('')
+                    }}
+                    className="mt-4 px-6 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors"
+                  >
+                    Clear Filters
+                  </button>
+                </div>
+              )
+            })()}
 
             {/* Pagination */}
             {totalPages > 1 && (

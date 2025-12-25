@@ -225,7 +225,7 @@ const mockSaleProducts = [
     gender: 'unisex' as const,
     sizes: ['5', '6', '7', '8', '9', '10', '11', '12'],
     colors: ['Black/White', 'Navy/White', 'Checkerboard'],
-    images: ['https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop'],
+    images: ['/Arrivals/DSC02264.JPG'],
     inStock: true,
     isOnSale: true,
     tags: ['skate', 'vans', 'side-stripe'],

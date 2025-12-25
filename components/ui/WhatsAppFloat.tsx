@@ -1,7 +1,7 @@
 'use client'
 
 export function WhatsAppFloat() {
-  const phoneNumber = "+254745946585"
+  const phoneNumber = "+254787507945"
   const message = "Hi! I'm interested in your products from Luxury Culture"
   
   const handleWhatsAppClick = () => {

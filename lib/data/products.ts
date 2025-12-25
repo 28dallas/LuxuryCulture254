@@ -195,7 +195,7 @@ export const mockProducts: Product[] = [
     gender: 'unisex',
     sizes: ['4', '5', '6', '7', '8', '9', '10', '11'],
     colors: ['Black/White', 'Checkerboard'],
-    images: ['https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200&h=1200&fit=crop'],
+    images: ['/Arrivals/DSC02264.JPG'],
     inStock: true,
     isOnSale: false,
     isBestseller: true,

@@ -309,7 +309,7 @@ export default function HomePage() {
             <h2 className="heading-lg mb-4">SALE</h2>
             <p className="text-body mb-6 max-w-2xl mx-auto opacity-90">
               Serious deals on premium footwear. Limited time only - 
-              don't miss out on these fire discounts.
+              don't miss out on these fire discounts with latest sneaker photos.
             </p>
             <Link href="/shop?sale=true">
               <Button variant="secondary">SHOP ALL SALE ITEMS</Button>

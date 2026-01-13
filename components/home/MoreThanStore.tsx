@@ -15,7 +15,7 @@ export function MoreThanStore() {
           <div className="relative group cursor-pointer">
             <div className="aspect-[4/5] bg-secondary-100 rounded-lg overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop"
+                src="/IMG/Lux/lux1.jpg"
                 alt="Community member"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
@@ -32,7 +32,7 @@ export function MoreThanStore() {
           <div className="relative group cursor-pointer">
             <div className="aspect-[4/5] bg-secondary-100 rounded-lg overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=500&fit=crop"
+                src="/IMG/Lux/lux2.jpg"
                 alt="Collaboration workspace"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
@@ -49,7 +49,7 @@ export function MoreThanStore() {
           <div className="relative group cursor-pointer">
             <div className="aspect-[4/5] bg-secondary-100 rounded-lg overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=500&fit=crop"
+                src="/IMG/Lux/lux3.jpg"
                 alt="Authentic sneakers"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />

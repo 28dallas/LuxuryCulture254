@@ -6,68 +6,7 @@ import Link from 'next/link'
 import { useCartStore } from '@/lib/store/cart'
 import { Button } from '@/components/ui/Button'
 import { Minus, Plus, ShoppingCart, Heart, Share2, ChevronRight } from 'lucide-react'
-
-// Mock product data - matches homepage products
-const mockProducts = [
-  {
-    id: '1',
-    name: 'Air Jordan 1 Retro High OG',
-    slug: 'air-jordan-1-retro-high-og',
-    description: 'The legendary Air Jordan 1 returns with premium materials and classic colorway.',
-    price: 15000,
-    originalPrice: 18000,
-    brand: 'Nike',
-    category: 'footwear' as const,
-    gender: 'unisex' as const,
-    sizes: ['7', '8', '9', '10', '11', '12'],
-    colors: ['Black/Red', 'White/Black'],
-    images: ['https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=400&fit=crop'],
-    inStock: true,
-    isOnSale: true,
-    isNewArrival: true,
-    tags: ['retro', 'basketball', 'iconic'],
-    createdAt: '2024-01-01',
-    updatedAt: '2024-01-01'
-  },
-  {
-    id: '2',
-    name: 'Nike SB Dunk Low Pro',
-    slug: 'Nike SB Dunk Low Pro',
-    description: 'Kanye West\'s revolutionary sneaker with BOOST technology and Primeknit upper.',
-    price: 12000,
-    brand: 'Adidas',
-    category: 'footwear' as const,
-    gender: 'unisex' as const,
-    sizes: ['6', '7', '8', '9', '10', '11'],
-    colors: ['Cream', 'Black', 'Beluga'],
-    images: ['https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=400&h=400&fit=crop'],
-    inStock: true,
-    isOnSale: false,
-    isNewArrival: true,
-    tags: ['boost', 'casual', 'modern'],
-    createdAt: '2024-01-01',
-    updatedAt: '2024-01-01'
-  },
-  {
-    id: '3',
-    name: 'Dunk Low "Panda"',
-    slug: 'dunk-low-panda',
-    description: 'Nike\'s classic basketball-inspired sneaker in the iconic black and white colorway.',
-    price: 8000,
-    originalPrice: 10000,
-    brand: 'Nike',
-    category: 'footwear' as const,
-    gender: 'unisex' as const,
-    sizes: ['5', '6', '7', '8', '9', '10', '11'],
-    colors: ['Black/White'],
-    images: ['https://images.unsplash.com/photo-1606813907291-76e2d7d5e1a4?w=400&h=400&fit=crop'],
-    inStock: true,
-    isOnSale: true,
-    tags: ['skate', 'casual', 'classic'],
-    createdAt: '2024-01-01',
-    updatedAt: '2024-01-01'
-  }
-]
+import { allProducts } from '@/lib/data/all-products'
 
 export default function ProductDetailPage() {
   const params = useParams()
@@ -76,7 +15,7 @@ export default function ProductDetailPage() {
   const [quantity, setQuantity] = useState(1)
   const [selectedImage, setSelectedImage] = useState(0)
 
-  const product = mockProducts.find(p => p.slug === params.slug)
+  const product = allProducts.find(p => p.slug === params.slug)
 
   if (!product) {
     return (

@@ -9,249 +9,12 @@ import { BrandShowcase } from '@/components/home/BrandShowcase'
 import { GiftSection } from '@/components/home/GiftSection'
 import { MoreThanStore } from '@/components/home/MoreThanStore'
 import { EndOfYearPromo } from '@/components/home/EndOfYearPromo'
+import { allProducts } from '@/lib/data/all-products'
 
-
-// Mock data - replace with actual API calls
-const mockNewDrops = [
-  {
-    id: '1',
-    name: 'Nike SB DUNK LOW PRO - White/Black(Size)-44',
-    slug: 'air-jordan-1-retro-high-og',
-    description: 'The legendary Air Jordan 1 returns with premium materials and classic colorway.',
-    price: 350,
-    originalPrice: 400,
-    brand: 'Nike',
-    category: 'footwear' as const,
-    gender: 'unisex' as const,
-    sizes: ['7', '8', '9', '10', '11', '12'],
-    colors: ['Black/Red', 'White/Black'],
-    images: ['/IMG/latest/photo_2026-01-09_09-24-49.jpg'],
-    inStock: true,
-    isOnSale: true,
-    isNewArrival: true,
-    tags: ['retro', 'basketball', 'iconic'],
-    createdAt: '2024-01-01',
-    updatedAt: '2024-01-01'
-  },
-
-  {
-    id: '2',
-    name: 'Nike SB DUNK LOW THERE SKATEBOARDS (Size)-43',
-    slug: 'Nike SB Dunk Low Pro',
-    description: 'Kanye West\'s revolutionary sneaker with BOOST technology andPrimeknit upper.',
-    price: 600,
-    brand: 'Adidas',
-    category: 'footwear' as const,
-    gender: 'unisex' as const,
-    sizes: ['6', '7', '8', '9', '10', '11'],
-    colors: ['Cream', 'Black', 'Beluga'],
-    images: ['/IMG/latest/photo_2026-01-09_09-24-51.jpg'],
-    inStock: true,
-    isOnSale: false,
-    isNewArrival: true,
-    tags: ['boost', 'casual', 'modern'],
-    createdAt: '2024-01-01',
-    updatedAt: '2024-01-01'
-  },
-  {
-    id: '3',
-    name: 'Nike SB DUNK LOW SUPREME 94 BLACK (Size)-42',
-    slug: 'dunk-low-panda',
-    description: 'Nike\'s classic basketball-inspired sneaker in the iconic black and white colorway.',
-    price: 450,
-    originalPrice: 500,
-    brand: 'Nike',
-    category: 'footwear' as const,
-    gender: 'unisex' as const,
-    sizes: ['5', '6', '7', '8', '9', '10', '11'],
-    colors: ['Black/White'],
-    images: ['/IMG/latest/photo_2026-01-09_09-24-52.jpg'],
-    inStock: true,
-    isOnSale: true,
-    tags: ['skate', 'casual', 'classic'],
-    createdAt: '2024-01-01',
-    updatedAt: '2024-01-01'
-  },
-
-  {
-    id: '4',
-    name: 'Nike SB DUNK LOW SUPREME 94 WHITE (Size)-45',
-    slug: 'new-balance-550',
-    description: 'Classic \'90s basketball shoe revived with premium materials and retro styling.',
-    price: 500,
-    brand: 'New Balance',
-    category: 'footwear' as const,
-    gender: 'unisex' as const,
-    sizes: ['6', '7', '8', '9', '10', '11', '12'],
-    colors: ['White/Green', 'White/Navy'],
-    images: ['/IMG/latest/photo_2026-01-09_09-24-53.jpg'],
-    inStock: true,
-    isOnSale: false,
-    isNewArrival: true,
-    tags: ['retro', 'basketball', 'premium'],
-    createdAt: '2024-01-01',
-    updatedAt: '2024-01-01'
-  }
-]
-
-
-const mockBestsellers = [
-  {
-    id: '5',
-    name: 'Nike SB Dunk Low Arts-Rec',
-    slug: 'air-force-1-07',
-    description: 'The timeless Nike Air Force 1 with classic leather upper and Air-Sole unit.',
-    price: 7500,
-    brand: 'Nike',
-    category: 'footwear' as const,
-    gender: 'unisex' as const,
-    sizes: ['6', '7', '8', '9', '10', '11', '12'],
-    colors: ['White', 'Black', 'Triple Black'],
-    images: ['/IMG/Arrivals/DSC02186.JPG'],
-    inStock: true,
-    isOnSale: false,
-    isBestseller: true,
-    tags: ['classic', 'leather', 'basketball'],
-    createdAt: '2024-01-01',
-    updatedAt: '2024-01-01'
-  },
-  {
-    id: '6',
-    name: 'Adidas Samba LT Yellow',
-    slug: 'ultraboost-22',
-    description: 'Adidas\' most responsive running shoe with BOOST midsole and Primeknit upper.',
-    price: 300,
-    brand: 'Adidas',
-    category: 'footwear' as const,
-    gender: 'unisex' as const,
-    sizes: ['6', '7', '8', '9', '10', '11', '12'],
-    colors: ['Core Black', 'Cloud White', 'Blue'],
-    images: ['/IMG/Arrivals/DSC02262.JPG'],
-    inStock: true,
-    isOnSale: false,
-    isBestseller: true,
-    tags: ['running', 'boost', 'performance'],
-    createdAt: '2024-01-01',
-    updatedAt: '2024-01-01'
-  },
-  {
-    id: '7',
-    name: 'Air Jordan 4 Retro Brick by SP',
-    slug: 'chuck-taylor-all-star',
-    description: 'The iconic Converse Chuck Taylor with classic canvas upper and rubber sole.',
-    price: 1000,
-    brand: 'Converse',
-    category: 'footwear' as const,
-    gender: 'unisex' as const,
-    sizes: ['4', '5', '6', '7', '8', '9', '10', '11'],
-    colors: ['Black', 'White', 'Red'],
-    images: ['/IMG/Arrivals/DSC02926.JPG'],
-    inStock: true,
-    isOnSale: false,
-    isBestseller: true,
-    tags: ['canvas', 'classic', 'casual'],
-    createdAt: '2024-01-01',
-    updatedAt: '2024-01-01'
-  },
-  {
-    id: '8',
-    name: 'Nike SB Dunk Low Wizard of OZ',
-    slug: 'classic-leather',
-    description: 'Reebok\'s timeless leather sneaker with vintage styling and comfortable fit.',
-    price: 6500,
-    brand: 'Reebok',
-    category: 'footwear' as const,
-    gender: 'unisex' as const,
-    sizes: ['6', '7', '8', '9', '10', '11'],
-    colors: ['White', 'Black', 'Navy'],
-    images: ['/IMG/Arrivals/DSC02252.JPG'],
-    inStock: true,
-    isOnSale: false,
-    isBestseller: true,
-    tags: ['leather', 'vintage', 'comfort'],
-    createdAt: '2024-01-01',
-    updatedAt: '2024-01-01'
-  }
-]
-
-const mockSaleProducts = [
-  {
-    id: '9',
-    name: 'Nike Dunk Low SE Pandomonium Ochre Suede',
-    slug: 'air-max-90',
-    description: 'Nike\'s classic Air Max 90 with visible Air cushioning and sleek design.',
-    price: 550,
-    originalPrice: 90,
-    brand: 'Nike',
-    category: 'footwear' as const,
-    gender: 'unisex' as const,
-    sizes: ['6', '7', '8', '9', '10', '11'],
-    colors: ['White/Grey', 'Black/White', 'Infrared'],
-    images: ['/IMG/latest/photo_2026-01-09_09-26-27.jpg'],
-    inStock: true,
-    isOnSale: true,
-    tags: ['air-max', 'retro', 'cushioning'],
-    createdAt: '2024-01-01',
-    updatedAt: '2024-01-01'
-  },
-  {
-    id: '10',
-    name: 'Nike Dunk Low Retro LTD Wizard',
-    slug: 'stan-smith',
-    description: 'Adidas\' most iconic tennis shoe with clean design and premium materials.',
-    price: 550,
-    originalPrice: 600,
-    brand: 'Adidas',
-    category: 'footwear' as const,
-    gender: 'unisex' as const,
-    sizes: ['5', '6', '7', '8', '9', '10', '11'],
-    colors: ['White/Green', 'White/Red', 'All White'],
-    images: ['/IMG/latest/photo_2026-01-09_09-26-29.jpg'],
-    inStock: true,
-    isOnSale: true,
-    tags: ['tennis', 'minimalist', 'classic'],
-    createdAt: '2024-01-01',
-    updatedAt: '2024-01-01'
-  },
-  {
-    id: '11',
-    name: 'Nike Dunk Low Retro LTD Punk Rock Digital Camo',
-    slug: 'old-skool',
-    description: 'Vans\' iconic skate shoe with suede and canvas upper and signature side stripe.',
-    price: 350,
-    originalPrice: 450,
-    brand: 'Vans',
-    category: 'footwear' as const,
-    gender: 'unisex' as const,
-    sizes: ['5', '6', '7', '8', '9', '10', '11', '12'],
-    colors: ['Black/White', 'Navy/White', 'Checkerboard'],
-    images: ['/IMG/latest/photo_2026-01-09_09-26-30.jpg'],
-    inStock: true,
-    isOnSale: true,
-    tags: ['skate', 'vans', 'side-stripe'],
-    createdAt: '2024-01-01',
-    updatedAt: '2024-01-01'
-  },
-  {
-    id: '12',
-    name: 'Nike Dunk Low Retro Littering',
-    slug: 'gel-lyte-iii',
-    description: 'ASICS\' classic running shoe with GEL cushioning and unique split-tongue design.',
-    price: 400,
-    originalPrice: 450,
-    brand: 'ASICS',
-    category: 'footwear' as const,
-    gender: 'unisex' as const,
-    sizes: ['6', '7', '8', '9', '10', '11'],
-    colors: ['White/Grey', 'Navy/White', 'Red/White'],
-    images: ['/IMG/latest/photo_2026-01-09_09-26-31.jpg'],
-    inStock: true,
-    isOnSale: true,
-    tags: ['running', 'gel', 'japanese'],
-    createdAt: '2024-01-01',
-    updatedAt: '2024-01-01'
-  }
-]
+// Get products from actual data with fallback to show some products
+const newDrops = allProducts.slice(0, 4)
+const bestsellers = allProducts.slice(4, 8) 
+const saleProducts = allProducts.slice(8, 12)
 
 export default function HomePage() {
   return (
@@ -275,7 +38,7 @@ export default function HomePage() {
               <Button variant="outline">VIEW ALL NEW ARRIVALS</Button>
             </Link>
           </div>
-          <ProductGrid products={mockNewDrops} />
+          <ProductGrid products={newDrops} />
         </div>
       </section>
 
@@ -292,7 +55,7 @@ export default function HomePage() {
               <Button variant="outline">VIEW ALL BESTSELLERS</Button>
             </Link>
           </div>
-          <ProductGrid products={mockBestsellers} />
+          <ProductGrid products={bestsellers} />
         </div>
       </section>
 
@@ -315,7 +78,7 @@ export default function HomePage() {
               <Button variant="secondary">SHOP ALL SALE ITEMS</Button>
             </Link>
           </div>
-          <ProductGrid products={mockSaleProducts} />
+          <ProductGrid products={saleProducts} />
         </div>
       </section>
 

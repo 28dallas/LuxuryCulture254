@@ -10,11 +10,12 @@ export function GiftSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Image */}
           <div className="relative">
-            <div className="aspect-square bg-secondary-100 rounded-lg overflow-hidden">
+            <div className="aspect-square bg-secondary-100 rounded-lg overflow-hidden relative">
               <Image
                 src="/Kicksmas.webp"
                 alt="Gift boxes"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>

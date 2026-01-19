@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter, Montserrat } from 'next/font/google'
 import './globals.css'
 import { Providers } from './providers'
@@ -9,18 +9,24 @@ import { WhatsAppFloat } from '@/components/ui/WhatsAppFloat'
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat' })
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+}
+
 export const metadata: Metadata = {
   title: 'Luxury Culture - Premium Sneakers & Streetwear',
   description: 'Your ultimate destination for premium sneakers and streetwear. Shop the latest drops, bestsellers, and exclusive collections.',
   keywords: 'sneakers, streetwear, shoes, apparel, fashion, Kicks Kenya, premium footwear',
   authors: [{ name: 'Luxury Culture Team' }],
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
-  },
   robots: 'index, follow',
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
   openGraph: {
     title: 'Luxury Culture - Premium Sneakers & Streetwear',
     description: 'Your ultimate destination for premium sneakers and streetwear.',

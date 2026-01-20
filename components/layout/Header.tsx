@@ -39,7 +39,7 @@ export function Header() {
       {/* Main Header */}
       <div className="bg-white">
         <div className="container-custom">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Mobile Menu Button */}
             <button
               className="lg:hidden touch-target text-black hover:text-accent transition-colors rounded-md active-scale"
@@ -50,15 +50,16 @@ export function Header() {
             </button>
 
             {/* Logo */}
-            <Link href="/" className="flex items-center space-x-3">
+            <Link href="/" className="flex items-center space-x-2">
               <img
                 src="/logo3.png"
                 alt="Luxury Culture Logo"
-                className="h-20 w-auto"
+                className="h-12 w-auto lg:h-20"
               />
-              <div className="bg-accent text-white px-6 py-3 rounded-xl shadow-lg">
-                <div className="text-sm font-bold tracking-widest uppercase">
-                  Luxury Culture
+              <div className="bg-accent text-white px-3 py-2 lg:px-6 lg:py-3 rounded-lg lg:rounded-xl shadow-lg">
+                <div className="text-xs lg:text-sm font-bold tracking-wide lg:tracking-widest uppercase">
+                  <span className="hidden sm:inline">Luxury Culture</span>
+                  <span className="sm:hidden">LUXURY<br/>CULTURE</span>
                 </div>
               </div>
             </Link>

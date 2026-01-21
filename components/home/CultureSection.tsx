@@ -28,7 +28,7 @@ const blogPosts = [
     id: '1',
     title: 'The Evolution of Sneaker Culture in Kenya',
     excerpt: 'How streetwear and sneaker culture has grown across East Africa, from bootleg releases to official drops.',
-    image: 'https://images.unsplash.com/photo-1543508282-6319a3e2621f?w=600&h=400&fit=crop',
+    image: '/IMG/latest/lux14.jpg',
     author: 'Luxury Culture Team',
     date: 'Dec 15, 2024',
     href: '/editorial/sneaker-culture-kenya'
@@ -37,7 +37,7 @@ const blogPosts = [
     id: '2',
     title: 'Top 10 Sneaker Drops of 2024',
     excerpt: 'The most hyped and sought-after releases that defined the year in sneaker culture.',
-    image: 'https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=600&h=400&fit=crop',
+    image: '/IMG/latest/lux12.jpg',
     author: 'Luxury Culture Team',
     date: 'Dec 10, 2024',
     href: '/editorial/top-10-drops-2024'
@@ -46,7 +46,7 @@ const blogPosts = [
     id: '3',
     title: 'Style Guide: Mastering the Sneaker Fit',
     excerpt: 'How to perfectly pair your sneakers with outfits for any occasion, from casual to formal.',
-    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop',
+    image: '/IMG/latest/lux16.jpg',
     author: 'Luxury Culture Team',
     date: 'Dec 5, 2024',
     href: '/editorial/sneaker-style-guide'
@@ -164,7 +164,7 @@ export function CultureSection() {
           {/* Right Column - Image */}
           <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1579338559194-a162d19bf842?w=800&h=600&fit=crop"
+              src="/IMG/Lux/lux11.jpg"
               alt="Sneaker Culture"
               className="w-full h-[500px] object-cover rounded-xl"
             />

@@ -112,7 +112,7 @@ export function Footer() {
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone size={16} />
-                  <span className="text-sm">+254 745 946 585</span>
+                  <span className="text-sm">+254 787 507945</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <MapPin size={16} />
@@ -202,7 +202,7 @@ export function Footer() {
             {/* Copyright */}
             <div className="text-sm opacity-90 text-center md:text-right">
               <p>&copy; {currentYear} Luxury Culture. All rights reserved.</p>
-              <p className="mt-1">Made By Nathan Krop: 0702605566 ❤️ in Nairobi</p>
+              <p className="mt-1">Made By Neithank: 0702605566 in Nairobi</p>
             </div>
           </div>
         </div>

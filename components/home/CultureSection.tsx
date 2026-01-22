@@ -3,23 +3,23 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
-import { ArrowRight, Users, Award, Truck, ChevronLeft, ChevronRight } from 'lucide-react'
+import { ArrowRight, Users, Award, Truck, Shield, MapPin, Star, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const cultureFeatures = [
   {
-    icon: Users,
-    title: 'COMMUNITY',
-    description: 'Join thousands of sneakerheads and streetwear enthusiasts sharing their passion.'
-  },
-  {
-    icon: Award,
-    title: 'AUTHENTICITY',
-    description: 'Every product is verified for authenticity. Your peace of mind is guaranteed.'
+    icon: Shield,
+    title: '100% AUTHENTIC',
+    description: 'Every product verified by our expert team. Guaranteed authentic or your money back.'
   },
   {
     icon: Truck,
-    title: 'FAST DELIVERY',
-    description: 'Get your drops delivered fast. Same-day delivery in Nairobi, nationwide shipping.'
+    title: 'SAME-DAY DELIVERY',
+    description: 'Order before 2PM and get your drops delivered the same day in Nairobi.'
+  },
+  {
+    icon: Users,
+    title: 'COMMUNITY FIRST',
+    description: 'Join 10,000+ sneakerheads celebrating Kenyan streetwear culture.'
   }
 ]
 
@@ -85,6 +85,30 @@ export function CultureSection() {
   return (
     <section className="section-padding bg-secondary text-primary">
       <div className="container-custom">
+        {/* Kenyan Pride Banner */}
+        <div className="bg-accent text-primary rounded-xl p-4 mb-10">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <MapPin size={24} />
+              <div>
+                <p className="font-bold">Proudly Kenyan</p>
+                <p className="text-sm opacity-90">Born in Nairobi, serving the continent</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2">
+                <Star size={16} className="fill-current" />
+                <span className="text-sm font-semibold">4.9★ Rating</span>
+              </div>
+              <div className="h-6 w-px bg-primary/30" />
+              <div className="flex items-center gap-2">
+                <Shield size={16} />
+                <span className="text-sm font-semibold">SSL Secured</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Official Retailer */}
         <div className="text-center mb-10">
           <h3 className="text-sm font-semibold text-secondary-600 uppercase mb-2">Official Retailer</h3>

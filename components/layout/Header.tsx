@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Search, ShoppingCart, User, Menu, X, ChevronDown } from 'lucide-react'
+import { Search, ShoppingCart, User, Menu, X, ChevronDown, Shield, Award, Truck } from 'lucide-react'
 import { useCartStore } from '@/lib/store/cart'
 
 const navigation = [
@@ -31,8 +31,38 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
-      {/* Top Bar */}
-      
+      {/* Top Trust Bar */}
+      <div className="bg-secondary text-primary py-2 hidden sm:block">
+        <div className="container-custom">
+          <div className="flex items-center justify-between text-xs">
+            <div className="flex items-center space-x-6">
+              <div className="flex items-center space-x-2">
+                <Shield size={14} className="text-accent" />
+                <span>100% Authentic</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Truck size={14} className="text-accent" />
+                <span>Same-day Nairobi delivery</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Award size={14} className="text-accent" />
+                <span>Kenyan Owned & Operated</span>
+              </div>
+            </div>
+            <div className="flex items-center space-x-4">
+              <Link href="/size-guide" className="hover:text-accent transition-colors">
+                Size Guide
+              </Link>
+              <Link href="/shipping" className="hover:text-accent transition-colors">
+                Shipping
+              </Link>
+              <Link href="/returns" className="hover:text-accent transition-colors">
+                Returns
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Main Header */}
       <div className="bg-white">

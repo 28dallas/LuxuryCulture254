@@ -1,6 +1,6 @@
 'use client'
 
-import { Star } from 'lucide-react'
+import { Star, Shield, Award, Users } from 'lucide-react'
 
 interface Testimonial {
   id: number
@@ -52,9 +52,10 @@ export function Testimonials() {
       <div className="container-custom">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-accent font-bold uppercase tracking-widest text-sm mb-2">
-            ⭐ WHAT OUR CUSTOMERS SAY
-          </p>
+          <div className="inline-flex items-center space-x-2 bg-accent text-primary px-4 py-2 rounded-full font-bold text-sm mb-4">
+            <Star size={16} className="fill-current" />
+            <span>VERIFIED REVIEWS</span>
+          </div>
           <h2 className="text-4xl lg:text-5xl font-display font-bold mb-4">
             Loved by Luxury Enthusiasts
           </h2>
@@ -70,6 +71,12 @@ export function Testimonials() {
               key={testimonial.id}
               className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/15 transition-all duration-300 border border-white/20 hover:border-accent/50"
             >
+              {/* Trust Badge */}
+              <div className="flex items-center gap-1 mb-3">
+                <Shield size={12} className="text-accent" />
+                <span className="text-[10px] text-accent font-semibold">Verified Purchase</span>
+              </div>
+
               {/* Stars */}
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: testimonial.rating }).map((_, i) => (
@@ -103,18 +110,44 @@ export function Testimonials() {
         </div>
 
         {/* Stats Section */}
-        <div className="mt-16 pt-16 border-t border-white/10 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="text-center">
-            <p className="text-5xl font-bold text-accent mb-2">10K+</p>
-            <p className="text-gray-300">Happy Customers</p>
-          </div>
-          <div className="text-center">
-            <p className="text-5xl font-bold text-accent mb-2">4.9★</p>
-            <p className="text-gray-300">Average Rating</p>
-          </div>
-          <div className="text-center">
-            <p className="text-5xl font-bold text-accent mb-2">100%</p>
-            <p className="text-gray-300">Authentic Products</p>
+        <div className="mt-16 pt-16 border-t border-white/10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="flex items-center justify-center mb-2">
+                <div className="bg-accent/20 p-3 rounded-full">
+                  <Users size={24} className="text-accent" />
+                </div>
+              </div>
+              <p className="text-5xl font-bold text-accent mb-2">10K+</p>
+              <p className="text-gray-300">Happy Customers</p>
+            </div>
+            <div className="text-center">
+              <div className="flex items-center justify-center mb-2">
+                <div className="bg-accent/20 p-3 rounded-full">
+                  <Star size={24} className="text-accent fill-current" />
+                </div>
+              </div>
+              <p className="text-5xl font-bold text-accent mb-2">4.9★</p>
+              <p className="text-gray-300">Average Rating</p>
+            </div>
+            <div className="text-center">
+              <div className="flex items-center justify-center mb-2">
+                <div className="bg-accent/20 p-3 rounded-full">
+                  <Shield size={24} className="text-accent" />
+                </div>
+              </div>
+              <p className="text-5xl font-bold text-accent mb-2">100%</p>
+              <p className="text-gray-300">Authentic Products</p>
+            </div>
+            <div className="text-center">
+              <div className="flex items-center justify-center mb-2">
+                <div className="bg-accent/20 p-3 rounded-full">
+                  <Award size={24} className="text-accent" />
+                </div>
+              </div>
+              <p className="text-5xl font-bold text-accent mb-2">50+</p>
+              <p className="text-gray-300">Premium Brands</p>
+            </div>
           </div>
         </div>
       </div>

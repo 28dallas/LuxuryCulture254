@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
-import { X } from 'lucide-react'
+import { X, Shield, Truck, Award } from 'lucide-react'
 
 const collections = [
   {
@@ -54,6 +54,10 @@ export function FeaturedCollections() {
       <section className="section-padding bg-primary">
         <div className="container-custom">
           <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-2 bg-accent/10 text-accent px-4 py-2 rounded-full font-bold text-sm mb-4">
+              <Award size={16} />
+              <span>CURATED SELECTION</span>
+            </div>
             <h2 className="heading-lg mb-4">FEATURED COLLECTIONS</h2>
             <p className="text-body max-w-2xl mx-auto">
               Discover curated collections from the world's most iconic brands. 
@@ -61,7 +65,7 @@ export function FeaturedCollections() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
             {collections.map((collection) => (
               <div
                 key={collection.id}
@@ -75,6 +79,12 @@ export function FeaturedCollections() {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+                </div>
+
+                {/* Trust Badge */}
+                <div className="absolute top-4 left-4 flex items-center space-x-1 bg-white/90 backdrop-blur-sm text-accent px-2 py-1 rounded-full">
+                  <Shield size={12} />
+                  <span className="text-[10px] font-semibold">Authentic</span>
                 </div>
 
                 {/* Content */}
@@ -100,6 +110,24 @@ export function FeaturedCollections() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Trust Indicators */}
+          <div className="mt-16 pt-8 border-t border-secondary-100">
+            <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-secondary-600">
+              <div className="flex items-center space-x-2">
+                <Shield size={16} className="text-accent" />
+                <span>100% Authentic Guaranteed</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Truck size={16} className="text-accent" />
+                <span>Fast Nairobi Delivery</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Award size={16} className="text-accent" />
+                <span>Premium Quality</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Mail, Phone, MapPin, Instagram, Facebook, Twitter, Youtube } from 'lucide-react'
+import { Mail, Phone, MapPin, Instagram, Facebook, Twitter, Youtube, Shield, Truck, Award, Lock } from 'lucide-react'
 
 // Custom TikTok Icon Component
 const TikTokIcon = ({ size = 18 }: { size?: number }) => (
@@ -57,6 +57,50 @@ export function Footer() {
 
   return (
     <footer className="bg-secondary text-primary mt-16">
+      {/* Trust Badges Section */}
+      <div className="bg-secondary-900 border-b border-primary-700">
+        <div className="container-custom py-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="flex items-center space-x-3">
+              <div className="bg-accent text-primary p-2 rounded-full">
+                <Shield size={20} />
+              </div>
+              <div>
+                <p className="font-semibold text-sm">100% Authentic</p>
+                <p className="text-xs opacity-70">Verified Products</p>
+              </div>
+            </div>
+            <div className="flex items-center space-x-3">
+              <div className="bg-accent text-primary p-2 rounded-full">
+                <Truck size={20} />
+              </div>
+              <div>
+                <p className="font-semibold text-sm">Fast Delivery</p>
+                <p className="text-xs opacity-70">Same-day in Nairobi</p>
+              </div>
+            </div>
+            <div className="flex items-center space-x-3">
+              <div className="bg-accent text-primary p-2 rounded-full">
+                <Award size={20} />
+              </div>
+              <div>
+                <p className="font-semibold text-sm">10K+ Customers</p>
+                <p className="text-xs opacity-70">Trusted Since 2020</p>
+              </div>
+            </div>
+            <div className="flex items-center space-x-3">
+              <div className="bg-accent text-primary p-2 rounded-full">
+                <Lock size={20} />
+              </div>
+              <div>
+                <p className="font-semibold text-sm">Secure Payment</p>
+                <p className="text-xs opacity-70">SSL Encrypted</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Newsletter Section */}
       <div className="bg-accent text-primary py-12">
         <div className="container-custom">
@@ -105,6 +149,11 @@ export function Footer() {
                 Your ultimate destination for premium sneakers and streetwear. 
                 Representing the culture, one drop at a time.
               </p>
+              {/* Kenyan Badge */}
+              <div className="inline-flex items-center space-x-2 bg-primary-800 text-primary px-3 py-1.5 rounded-full mb-6">
+                <MapPin size={14} />
+                <span className="text-xs font-semibold">Born in Nairobi</span>
+              </div>
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <Mail size={16} />

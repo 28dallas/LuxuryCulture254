@@ -2,15 +2,16 @@
 
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
-import { Heart, Users, Zap } from 'lucide-react'
+import { Heart, Users, Zap, Shield, MapPin } from 'lucide-react'
 
 export function BrandStory() {
   return (
     <section className="section-padding bg-gradient-to-br from-white via-primary to-secondary-50">
       <div className="container-custom">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: Story Text */}
           <div className="max-w-xl">
+            {/* Badge */}
             <div className="mb-6">
               <p className="text-accent font-bold uppercase tracking-widest text-sm mb-2">
                 ✨ OUR STORY
@@ -21,15 +22,27 @@ export function BrandStory() {
               </h2>
             </div>
 
+            {/* Mission Statement */}
             <p className="text-lg text-secondary-700 mb-6 leading-relaxed">
-              At Luxury Culture, we believe in bringing authentic premium streetwear and sneakers to the people who appreciate quality, craftsmanship, and culture. Founded with a passion for connecting enthusiasts with the finest collections, we've curated a marketplace where every item tells a story.
+              <strong>Our Mission:</strong> To democratize luxury streetwear in Kenya and across Africa, 
+              making authentic premium products accessible to every enthusiast who appreciates quality, 
+              craftsmanship, and culture.
+            </p>
+
+            <p className="text-lg text-secondary-700 mb-6 leading-relaxed">
+              At Luxury Culture, we believe in bringing authentic premium streetwear and sneakers to the 
+              people who appreciate quality, craftsmanship, and culture. Founded with a passion for 
+              connecting enthusiasts with the finest collections, we've curated a marketplace where 
+              every item tells a story.
             </p>
 
             <p className="text-lg text-secondary-700 mb-8 leading-relaxed">
-              We're more than just a store—we're a movement. We celebrate the intersection of fashion, art, and community. Every release, every collaboration, every piece in our collection has been handpicked to ensure authenticity and excellence.
+              We're more than just a store—we're a movement. We celebrate the intersection of fashion, 
+              art, and community. Every release, every collaboration, every piece in our collection has 
+              been handpicked to ensure authenticity and excellence.
             </p>
 
-            {/* Core Values */}
+            {/* Core Values with Icons */}
             <div className="space-y-4 mb-8">
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0 mt-1">
@@ -53,12 +66,23 @@ export function BrandStory() {
 
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0 mt-1">
-                  <Zap className="text-accent" size={24} />
+                  <Shield className="text-accent" size={24} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-secondary mb-1">Quality Obsessed</h3>
-                  <p className="text-secondary-600">100% authentic products with uncompromising standards</p>
+                  <h3 className="font-bold text-secondary mb-1">Authenticity Obsessed</h3>
+                  <p className="text-secondary-600">100% authentic products with uncompromising verification standards</p>
                 </div>
+              </div>
+            </div>
+
+            {/* Local Relevance Badge */}
+            <div className="flex items-center space-x-4 mb-8 p-4 bg-secondary-50 rounded-lg">
+              <div className="bg-accent text-primary p-2 rounded-full">
+                <MapPin size={20} />
+              </div>
+              <div>
+                <p className="font-semibold text-secondary text-sm">Proudly Kenyan</p>
+                <p className="text-secondary-600 text-xs">Born in Nairobi, serving the continent</p>
               </div>
             </div>
 
@@ -75,7 +99,7 @@ export function BrandStory() {
                 <img
                   src="/IMG/Lux/lux1.jpg"
                   alt="Luxury Culture Community"
-                  className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
+                  className="w-full h-64 lg:h-80 object-cover hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                   decoding="async"
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -87,7 +111,7 @@ export function BrandStory() {
                 <img
                   src="/IMG/Lux/lux2.jpg"
                   alt="Premium Sneakers"
-                  className="w-full h-40 object-cover hover:scale-105 transition-transform duration-500"
+                  className="w-full h-40 lg:h-48 object-cover hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                   decoding="async"
                   sizes="(max-width: 768px) 50vw, 25vw"
@@ -97,7 +121,7 @@ export function BrandStory() {
                 <img
                   src="/IMG/Lux/lux3.jpg"
                   alt="Authentic Products"
-                  className="w-full h-40 object-cover hover:scale-105 transition-transform duration-500"
+                  className="w-full h-40 lg:h-48 object-cover hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                   decoding="async"
                   sizes="(max-width: 768px) 50vw, 25vw"
@@ -110,6 +134,21 @@ export function BrandStory() {
               <div className="text-center">
                 <p className="text-2xl font-bold">100%</p>
                 <p className="text-xs font-semibold whitespace-nowrap">AUTHENTIC</p>
+              </div>
+            </div>
+
+            {/* Trust Stats */}
+            <div className="absolute -bottom-8 left-4 bg-white rounded-lg shadow-lg p-4">
+              <div className="flex items-center space-x-4">
+                <div className="text-center">
+                  <p className="text-2xl font-bold text-accent">10K+</p>
+                  <p className="text-xs text-secondary-600">Customers</p>
+                </div>
+                <div className="w-px h-8 bg-gray-200" />
+                <div className="text-center">
+                  <p className="text-2xl font-bold text-accent">4.9★</p>
+                  <p className="text-xs text-secondary-600">Rating</p>
+                </div>
               </div>
             </div>
           </div>

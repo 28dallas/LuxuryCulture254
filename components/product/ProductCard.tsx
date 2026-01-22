@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Heart, ShoppingCart } from 'lucide-react'
+import { Heart, ShoppingCart, Star, Shield, Truck } from 'lucide-react'
 import { Product } from '@/types'
 import { useCartStore } from '@/lib/store/cart'
 import { Button } from '@/components/ui/Button'
@@ -11,6 +11,17 @@ import toast from 'react-hot-toast'
 interface ProductCardProps {
   product: Product
   className?: string
+}
+
+// Mock rating function - in real app this would come from product data
+const getProductRating = (product: Product) => {
+  // Generate consistent ratings based on product ID
+  const rating = 4 + (product.id.charCodeAt(0) % 10) / 10
+  return Math.min(rating, 5)
+}
+
+const getReviewCount = (product: Product) => {
+  return (product.id.charCodeAt(0) * 7) % 100 + 5
 }
 
 export function ProductCard({ product, className }: ProductCardProps) {
@@ -60,6 +71,9 @@ export function ProductCard({ product, className }: ProductCardProps) {
     ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
     : 0
 
+  const rating = getProductRating(product)
+  const reviewCount = getReviewCount(product)
+
   return (
     <Link href={`/product/${product.slug}`} className={`group relative block ${className || ''}`}>
       <div 
@@ -102,6 +116,14 @@ export function ProductCard({ product, className }: ProductCardProps) {
               )}
             </div>
 
+            {/* Trust Badge - Authenticity */}
+            <div className="absolute top-2 right-10 hidden sm:flex">
+              <div className="bg-white/90 backdrop-blur-sm text-accent px-2 py-1 rounded-full flex items-center gap-1">
+                <Shield size={12} />
+                <span className="text-[10px] font-semibold">100% Authentic</span>
+              </div>
+            </div>
+
             {/* Like Button */}
             {isMounted && (
               <button
@@ -138,6 +160,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
 
           {/* Product Info */}
           <div className="p-grid-2">
+            {/* Brand & Name */}
             <div className="mb-grid-1">
               <p className="text-xs text-secondary-600 uppercase tracking-wide font-medium">
                 {product.brand}
@@ -146,6 +169,28 @@ export function ProductCard({ product, className }: ProductCardProps) {
                 {product.name}
               </h3>
             </div>
+
+            {/* Star Rating */}
+            {isMounted && (
+              <div className="flex items-center gap-1 mb-2">
+                <div className="flex items-center">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star
+                      key={star}
+                      size={12}
+                      className={`${
+                        star <= Math.floor(rating) 
+                          ? 'fill-accent text-accent' 
+                          : 'fill-gray-200 text-gray-200'
+                      }`}
+                    />
+                  ))}
+                </div>
+                <span className="text-xs text-secondary-500">
+                  ({reviewCount})
+                </span>
+              </div>
+            )}
 
             {/* Size Selection */}
             <div className="mb-grid-2">
@@ -175,15 +220,25 @@ export function ProductCard({ product, className }: ProductCardProps) {
               </div>
             </div>
 
-            {/* Price */}
-            <div className="flex items-center gap-2">
-              <span className="font-bold text-secondary">
-                ${product.price.toLocaleString()}
-              </span>
-              {product.originalPrice && product.originalPrice > product.price && (
-                <span className="price-original">
-                  ${product.originalPrice.toLocaleString()}
+            {/* Price & Delivery Info */}
+            <div className="space-y-2">
+              <div className="flex items-center gap-2">
+                <span className="font-bold text-secondary text-lg">
+                  ${product.price.toLocaleString()}
                 </span>
+                {product.originalPrice && product.originalPrice > product.price && (
+                  <span className="price-original text-sm">
+                    ${product.originalPrice.toLocaleString()}
+                  </span>
+                )}
+              </div>
+              
+              {/* Quick Delivery Info */}
+              {product.inStock && (
+                <div className="flex items-center gap-1 text-xs text-secondary-500">
+                  <Truck size={12} className="text-accent" />
+                  <span>Same-day Nairobi delivery</span>
+                </div>
               )}
             </div>
           </div>

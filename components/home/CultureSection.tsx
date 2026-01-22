@@ -39,7 +39,7 @@ const blogPosts = [
     excerpt: 'The most hyped and sought-after releases that defined the year in sneaker culture.',
     image: '/IMG/latest/lux12.jpg',
     author: 'Luxury Culture Team',
-    date: 'Dec 10, 2024',
+    date: 'Dec 10, 2024', 
     href: '/editorial/top-10-drops-2024'
   },
   {

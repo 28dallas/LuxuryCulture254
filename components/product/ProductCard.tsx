@@ -1,11 +1,11 @@
- 'use client'
+'use client'
 
 import Link from 'next/link'
 import { Heart, ShoppingCart } from 'lucide-react'
 import { Product } from '@/types'
 import { useCartStore } from '@/lib/store/cart'
 import { Button } from '@/components/ui/Button'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import toast from 'react-hot-toast'
 
 interface ProductCardProps {
@@ -17,7 +17,12 @@ export function ProductCard({ product, className }: ProductCardProps) {
   const [isHovered, setIsHovered] = useState(false)
   const [isLiked, setIsLiked] = useState(false)
   const [selectedSize, setSelectedSize] = useState(product.sizes[0])
+  const [isMounted, setIsMounted] = useState(false)
   const addItem = useCartStore((state) => state.addItem)
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault()
@@ -98,21 +103,23 @@ export function ProductCard({ product, className }: ProductCardProps) {
             </div>
 
             {/* Like Button */}
-            <button
-              onClick={handleLike}
-              className={`absolute touch-target-sm rounded-full transition-all duration-200 ${
-                isLiked 
-                  ? 'bg-accent text-primary' 
-                  : 'bg-primary-100 text-secondary hover:bg-accent hover:text-primary'
-              } active-scale`}
-              style={{ top: '8px', right: '8px' }}
-              aria-label="Add to wishlist"
-            >
-              <Heart size={16} fill={isLiked ? 'currentColor' : 'none'} />
-            </button>
+            {isMounted && (
+              <button
+                onClick={handleLike}
+                className={`absolute touch-target-sm rounded-full transition-all duration-200 ${
+                  isLiked 
+                    ? 'bg-accent text-primary' 
+                    : 'bg-primary-100 text-secondary hover:bg-accent hover:text-primary'
+                } active-scale`}
+                style={{ top: '8px', right: '8px' }}
+                aria-label="Add to wishlist"
+              >
+                <Heart size={16} fill={isLiked ? 'currentColor' : 'none'} />
+              </button>
+            )}
 
             {/* Quick Add to Cart */}
-            {product.inStock && (
+            {product.inStock && isMounted && (
               <div className={`absolute left-2 right-2 transition-all duration-300 ${
                 isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
               }`}
@@ -146,11 +153,11 @@ export function ProductCard({ product, className }: ProductCardProps) {
                 {product.sizes.slice(0, 4).map((size) => (
                   <button
                     key={size}
-                    onClick={(e) => {
+                    onClick={isMounted ? (e) => {
                       e.preventDefault()
                       e.stopPropagation()
                       setSelectedSize(size)
-                    }}
+                    } : undefined}
                     className={`touch-target-sm text-xs border rounded transition-colors active-scale ${
                       selectedSize === size
                         ? 'border-accent bg-accent text-primary'

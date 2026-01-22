@@ -1,13 +1,14 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import { X } from 'lucide-react'
 
 const collections = [
   {
     id: '1',
-    
+    title: 'JORDAN',
     subtitle: 'LEGENDARY BEGINS HERE',
     description: 'The iconic line that started it all. From the classic AJ1 to the latest retros.',
     image: '/IMG/Lux/lux5.jpg',
@@ -17,7 +18,7 @@ const collections = [
   },
   {
     id: '2',
-  
+    title: 'YEEZY',
     subtitle: 'THE FUTURE IS NOW',
     description: 'Kanye West\'s revolutionary designs that changed the sneaker game forever.',
     image: '/IMG/Lux/lux8.jpg',
@@ -27,7 +28,7 @@ const collections = [
   },
   {
     id: '3',
-   
+    title: 'CULTURE',
     subtitle: 'EXPRESS YOURSELF',
     description: 'Premium apparel and accessories for the culture. Style that speaks volumes.',
     image: '/IMG/Lux/lux7.jpg',
@@ -90,13 +91,12 @@ export function FeaturedCollections() {
                     {collection.description}
                   </p>
 
-                  <Button 
-                    variant="outline" 
-                    className="border-primary text-primary hover:bg-primary hover:text-secondary w-fit"
-                    onClick={() => window.location.href = `/collections/${collection.id === '1' ? 'jordan' : collection.id === '2' ? 'yeezy' : 'culture'}`}
+                  <Link 
+                    href={`/collections/${collection.id === '1' ? 'jordan' : collection.id === '2' ? 'yeezy' : 'culture'}`}
+                    className="inline-flex items-center justify-center font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 border-2 border-accent text-accent bg-transparent hover:bg-accent hover:text-primary focus-visible:ring-accent w-fit px-6 py-3 rounded-md"
                   >
                     EXPLORE COLLECTION
-                  </Button>
+                  </Link>
                 </div>
               </div>
             ))}

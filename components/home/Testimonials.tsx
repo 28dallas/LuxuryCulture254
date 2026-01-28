@@ -1,6 +1,6 @@
 'use client'
 
-import { Star, Shield, Award, Users } from 'lucide-react'
+import { Star, Shield, Award, Users, User } from 'lucide-react'
 
 interface Testimonial {
   id: number
@@ -18,7 +18,7 @@ const testimonials: Testimonial[] = [
     role: 'Sneaker Enthusiast',
     text: 'Luxury Culture changed how I shop for premium sneakers. The quality is unmatched, and the customer service is exceptional. Every purchase feels like an investment.',
     rating: 5,
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop',
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ const testimonials: Testimonial[] = [
     role: 'Fashion Blogger',
     text: 'The curated collections at Luxury Culture are absolutely fire. You can tell they genuinely care about authenticity and bringing the best pieces to their customers.',
     rating: 5,
-    image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&h=400&fit=crop',
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const testimonials: Testimonial[] = [
     role: 'Streetwear Collector',
     text: 'Fast shipping, authentic products, and a real community vibe. This is the place where serious collectors come. Highly recommended to anyone who values quality.',
     rating: 5,
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ const testimonials: Testimonial[] = [
     role: 'Style Director',
     text: 'What I love most is the attention to detail. From the product descriptions to the packaging, everything screams premium. Worth every penny.',
     rating: 5,
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop',
   },
 ]
 
@@ -100,11 +100,9 @@ export function Testimonials() {
 
               {/* Author */}
               <div className="flex items-center gap-3 pt-6 border-t border-gray-100">
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="w-12 h-12 rounded-full object-cover"
-                />
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent to-red-500 flex items-center justify-center">
+                  <User size={20} className="text-white" />
+                </div>
                 <div>
                   <p className="font-bold text-black text-sm">{testimonial.name}</p>
                   <p className="text-xs text-gray-500">{testimonial.role}</p>

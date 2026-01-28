@@ -18,11 +18,11 @@ const collections = [
   },
   {
     id: '2',
-    title: 'YEEZY',
+    title: 'NIKE',
     subtitle: 'THE FUTURE IS NOW',
     description: 'Kanye West\'s revolutionary designs that changed the sneaker game forever.',
     image: '/IMG/Lux/lux8.jpg',
-    href: '/shop?brand=adidas',
+    href: '/shop?brand=nike',
     bgColor: 'bg-secondary',
     textColor: 'text-primary'
   },
@@ -67,8 +67,9 @@ export function FeaturedCollections() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
             {collections.map((collection) => (
-              <div
+              <Link
                 key={collection.id}
+                href={collection.href}
                 className="group relative overflow-hidden rounded-xl aspect-[4/5] transition-transform duration-300 hover:scale-105"
               >
                 {/* Background Image */}
@@ -101,14 +102,11 @@ export function FeaturedCollections() {
                     {collection.description}
                   </p>
 
-                  <Link 
-                    href={`/collections/${collection.id === '1' ? 'jordan' : collection.id === '2' ? 'yeezy' : 'culture'}`}
-                    className="inline-flex items-center justify-center font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 border-2 border-accent text-accent bg-transparent hover:bg-accent hover:text-primary focus-visible:ring-accent w-fit px-6 py-3 rounded-md"
-                  >
+                  <div className="inline-flex items-center justify-center font-semibold transition-all duration-200 border-2 border-accent text-accent bg-transparent group-hover:bg-accent group-hover:text-primary w-fit px-6 py-3 rounded-md">
                     EXPLORE COLLECTION
-                  </Link>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 

@@ -158,7 +158,10 @@ export function Footer() {
                 <div className="flex items-center space-x-3">
                   <Mail size={16} />
                   <span className="text-sm">Luxuryculture254@outlook.com</span>
+                
                 </div>
+
+                <div> <span className="text-sm">Luxuryculture254@gmail.com</span></div>
                 <div className="flex items-center space-x-3">
                   <Phone size={16} />
                   <span className="text-sm">+254 787 507945</span>

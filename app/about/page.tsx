@@ -137,8 +137,9 @@ export default function AboutPage() {
                   <h3 className="font-semibold mb-2">📞 Get In Touch</h3>
                   <p className="text-sm text-secondary-600">
                     📞 +254 787 507945<br />
-                    📧 Luxuryculture254@outlook.com<br />
-                    🌐 www.LuxuryCulture.com
+                    📧 Luxuryculture254@outlook.com <br></br>
+                    📧 Luxuryculture254@gmail.com<br />
+                    🌐 www.LuxuryCulture254.com
                   </p>
                 </div>
               </div>

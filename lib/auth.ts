@@ -78,12 +78,12 @@ export const authOptions: NextAuthOptions = {
     async jwt({ token, user }) {
       if (user) {
         token.id = user.id
-        token.email = user.email
-        token.firstName = (user as any).firstName
-        token.lastName = (user as any).lastName
-        token.phone = (user as any).phone
-        token.avatar = (user as any).avatar
-        token.role = (user as any).role
+        token.email = user.email || ''
+        token.firstName = ((user as any).firstName) || ''
+        token.lastName = ((user as any).lastName) || ''
+        token.phone = (user as any).phone || undefined
+        token.avatar = (user as any).avatar || undefined
+        token.role = ((user as any).role) || 'user'
       }
       return token
     },

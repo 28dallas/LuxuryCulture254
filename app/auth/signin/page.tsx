@@ -1,13 +1,13 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, Suspense } from 'react'
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { signIn } from 'next-auth/react'
 import toast from 'react-hot-toast'
 import { Eye, EyeOff, Mail, Lock, ArrowRight } from 'lucide-react'
 
-export default function SignInPage() {
+function SignInForm() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const callbackUrl = searchParams.get('callbackUrl') || '/account'
@@ -228,3 +228,27 @@ export default function SignInPage() {
   )
 }
 
+function LoadingFallback() {
+  return (
+    <div className="min-h-screen py-12 bg-gray-50">
+      <div className="container-custom">
+        <div className="max-w-md mx-auto">
+          <div className="text-center mb-8">
+            <div className="h-12 bg-gray-200 rounded animate-pulse mx-auto mb-6 w-48"></div>
+            <div className="h-8 bg-gray-200 rounded animate-pulse w-40 mx-auto"></div>
+          <div className="bg-white border border-gray-200 rounded-lg p-6">
+            <div className="space-y-4">
+              <div className="h-10 bg-gray-200 rounded animate-pulse"></div>
+              <div className="h-10 bg-gray-200 rounded animate-pulse"></div>
+          </div>
+      </div>
+  )
+}
+
+export default function SignInPage() {
+  return (
+    <Suspense fallback={<LoadingFallback />}>
+      <SignInForm />
+    </Suspense>
+  )
+}

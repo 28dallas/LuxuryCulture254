@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, Suspense } from 'react'
 import { useCartStore } from '@/lib/store/cart'
 import { Button } from '@/components/ui/Button'
 import { MpesaPayment } from '@/components/payment/MpesaPayment'

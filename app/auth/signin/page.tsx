@@ -236,12 +236,16 @@ function LoadingFallback() {
           <div className="text-center mb-8">
             <div className="h-12 bg-gray-200 rounded animate-pulse mx-auto mb-6 w-48"></div>
             <div className="h-8 bg-gray-200 rounded animate-pulse w-40 mx-auto"></div>
+          </div>
           <div className="bg-white border border-gray-200 rounded-lg p-6">
             <div className="space-y-4">
               <div className="h-10 bg-gray-200 rounded animate-pulse"></div>
               <div className="h-10 bg-gray-200 rounded animate-pulse"></div>
+            </div>
           </div>
+        </div>
       </div>
+    </div>
   )
 }
 

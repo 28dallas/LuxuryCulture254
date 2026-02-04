@@ -13,11 +13,12 @@ import { BrandStorySection } from '@/components/home/BrandStorySection'
 import { Testimonials } from '@/components/home/Testimonials'
 import { StrategicCTA } from '@/components/home/StrategicCTA'
 import { allProducts } from '@/lib/data/all-products'
+import { lux2Products } from '@/lib/data/lux2-products'
 
 // Get products from actual data with fallback to show some products
-const newDrops = allProducts.slice(0, 4)
-const bestsellers = allProducts.slice(4, 8) 
-const saleProducts = allProducts.slice(8, 12)
+const newDrops = lux2Products.slice(0, 4) // Use Lux2 products for new drops
+const bestsellers = allProducts.filter(p => p.isBestSeller).slice(0, 4) 
+const saleProducts = allProducts.filter(p => p.isOnSale).slice(0, 4)
 
 export default function HomePage() {
   return (

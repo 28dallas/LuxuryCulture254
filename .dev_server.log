@@ -1,12 +1,63 @@
-nohup: ignoring input
 
-> shop-jr@0.1.0 dev
+> luxury-culture@0.1.0 dev
 > next dev
 
- ⚠ Port 3000 is in use, trying 3001 instead.
-  ▲ Next.js 14.2.5
-  - Local:        http://localhost:3001
-  - Environments: .env.local
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /home/nathan/package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * /home/nathan/Documents/SHOP JR/package-lock.json
 
- ✓ Starting...
- ✓ Ready in 4s
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://10.10.57.123:3000
+- Environments: .env.local
+
+✓ Starting...
+Creating turbopack project { dir: '/home/nathan/Documents/SHOP JR', testMode: true }
+✓ Ready in 2.6s
+🔄 MongoDB connection attempt 1/3...
+⚠️ MongoDB SRV/DNS issue on attempt 1: querySrv ENOTFOUND _mongodb._tcp.cluster0.mongodb.net
+⏳ Retrying in 2000ms...
+🔄 MongoDB connection attempt 2/3...
+⚠️ MongoDB SRV/DNS issue on attempt 2: querySrv ENOTFOUND _mongodb._tcp.cluster0.mongodb.net
+⏳ Retrying in 2000ms...
+🔄 MongoDB connection attempt 3/3...
+⚠️ MongoDB SRV/DNS issue on attempt 3: querySrv ENOTFOUND _mongodb._tcp.cluster0.mongodb.net
+❌ MongoDB connection failed after all retries. Enabling simulated mode.
+MongoDB connection error: querySrv ENOTFOUND _mongodb._tcp.cluster0.mongodb.net
+⚠️ Failed to create order in database: Cannot call `orders.insertOne()` before initial connection is complete if `bufferCommands = false`. Make sure you `await mongoose.connect()` if you have `bufferCommands = false`.
+🧪 Order not stored (DB unavailable), continuing with simulation
+ POST /api/payment/mpesa/stkpush 200 in 7.2s (compile: 1848ms, render: 5.4s)
+Stripe error: Error: Invalid API Key provided: sk_test_*******lder
+    at ignore-listed frames {
+  type: 'StripeAuthenticationError',
+  raw: [Object],
+  rawType: 'invalid_request_error',
+  code: undefined,
+  doc_url: undefined,
+  param: undefined,
+  detail: undefined,
+  headers: [Object],
+  requestId: undefined,
+  statusCode: 401,
+  userMessage: undefined,
+  charge: undefined,
+  decline_code: undefined,
+  payment_intent: undefined,
+  payment_method: undefined,
+  payment_method_type: undefined,
+  setup_intent: undefined,
+  source: undefined
+}
+ POST /api/payment/stripe/charge 400 in 2.3s (compile: 833ms, render: 1437ms)
+PayPal Create Order Request: { intent: 'CAPTURE', purchase_units: [ { amount: [Object] } ] }
+PayPal order created: {
+  orderId: 'ORDER-1771675855059',
+  status: 'CREATED',
+  amount: '10.00',
+  currency: 'USD',
+  customer: undefined
+}
+ POST /api/payment/paypal/create-order 200 in 1205ms (compile: 190ms, render: 1015ms)

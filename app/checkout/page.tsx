@@ -9,6 +9,9 @@ import { PayPalPayment } from '@/components/payment/PayPalPayment'
 import { PaystackPayment } from '@/components/payment/PaystackPayment'
 import { Lock, Shield, CreditCard } from 'lucide-react'
 
+// Exchange rate: 1 USD = 155 KES
+const USD_TO_KES_RATE = 155
+
 export default function CheckoutPage() {
   const { items, getTotalPrice, clearCart } = useCartStore()
   const [selectedPayment, setSelectedPayment] = useState<'mpesa' | 'card' | 'paypal' | 'paystack'>('mpesa')
@@ -24,9 +27,13 @@ export default function CheckoutPage() {
   })
 
   const subtotal = getTotalPrice()
-  const shipping = subtotal > 5000 ? 0 : 500
+  // Fixed: Shipping is now in USD (equivalent to 500 KES = ~$3.22)
+  const shipping = subtotal > 5000 ? 0 : 3.22
   const tax = subtotal * 0.16
   const total = subtotal + shipping + tax
+  
+  // Calculate KES equivalent for M-Pesa
+  const totalInKES = Math.round(total * USD_TO_KES_RATE)
 
   if (items.length === 0) {
     return (
@@ -266,7 +273,9 @@ export default function CheckoutPage() {
                 <div className="border-t border-secondary-200 pt-6">
                   {selectedPayment === 'mpesa' && (
                     <MpesaPayment 
-                      total={total}
+                      totalUSD={total}
+                      totalKES={totalInKES}
+                      exchangeRate={USD_TO_KES_RATE}
                       orderInfo={orderInfo}
                       onSuccess={() => clearCart()}
                     />

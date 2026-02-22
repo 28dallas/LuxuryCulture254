@@ -7,7 +7,9 @@ import toast from 'react-hot-toast'
 import { useCartStore } from '@/lib/store/cart'
 
 interface MpesaPaymentProps {
-  total: number
+  totalUSD: number
+  totalKES: number
+  exchangeRate: number
   orderInfo: {
     email: string
     firstName: string
@@ -20,7 +22,7 @@ interface MpesaPaymentProps {
   onSuccess: () => void
 }
 
-export function MpesaPayment({ total, orderInfo, onSuccess }: MpesaPaymentProps) {
+export function MpesaPayment({ totalUSD, totalKES, exchangeRate, orderInfo, onSuccess }: MpesaPaymentProps) {
   const { items } = useCartStore()
   const [phoneNumber, setPhoneNumber] = useState('')
   const [isProcessing, setIsProcessing] = useState(false)
@@ -87,7 +89,7 @@ export function MpesaPayment({ total, orderInfo, onSuccess }: MpesaPaymentProps)
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           phoneNumber: phoneNumber.replace(/\D/g, ''),
-          amount: Math.round(total),
+          amount: totalKES,
           accountReference: `SHOPJR${Date.now()}`,
           transactionDesc: 'Luxury Culture Purchase',
           orderInfo: {
@@ -189,7 +191,7 @@ export function MpesaPayment({ total, orderInfo, onSuccess }: MpesaPaymentProps)
           <h3 className="text-lg font-bold mb-2">STK Push Sent!</h3>
           <p className="text-sm">
             Please check your M-Pesa and enter your PIN to complete the payment of{' '}
-            <strong>${total.toLocaleString()}</strong>
+            <strong>KSh {totalKES.toLocaleString()}</strong>
           </p>
           {orderNumber && (
             <p className="text-xs mt-2 opacity-75">
@@ -265,11 +267,20 @@ export function MpesaPayment({ total, orderInfo, onSuccess }: MpesaPaymentProps)
       {/* Payment Summary */}
       <div className="bg-secondary-50 p-4 rounded-lg">
         <h4 className="font-medium mb-2">Payment Summary</h4>
-        <div className="flex justify-between text-sm">
-          <span>Total Amount:</span>
-          <span className="font-bold">${total.toLocaleString()}</span>
+        <div className="space-y-1">
+          <div className="flex justify-between text-sm">
+            <span>Total (USD):</span>
+            <span className="font-bold">${totalUSD.toLocaleString()}</span>
+          </div>
+          <div className="flex justify-between text-sm">
+            <span>Total (KES):</span>
+            <span className="font-bold">KSh {totalKES.toLocaleString()}</span>
+          </div>
+          <div className="text-xs text-secondary-600 mt-2 pt-2 border-t border-secondary-200">
+            Exchange Rate: 1 USD = {exchangeRate} KES
+          </div>
         </div>
-        <div className="text-xs text-secondary-600 mt-1">
+        <div className="text-xs text-secondary-600 mt-2">
           Items: {items.length}
         </div>
       </div>
@@ -286,10 +297,10 @@ export function MpesaPayment({ total, orderInfo, onSuccess }: MpesaPaymentProps)
             <Loader className="mr-2 h-4 w-4 animate-spin" />
             Initiating Payment...
           </>
-        ) : (
+) : (
           <>
             <Smartphone className="mr-2 h-4 w-4" />
-            Pay ${total.toLocaleString()} with M-Pesa
+            Pay KSh {totalKES.toLocaleString()} with M-Pesa
           </>
         )}
       </Button>

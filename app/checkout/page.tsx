@@ -9,8 +9,8 @@ import { PayPalPayment } from '@/components/payment/PayPalPayment'
 import { PaystackPayment } from '@/components/payment/PaystackPayment'
 import { Lock, Shield, CreditCard } from 'lucide-react'
 
-// Exchange rate: 1 USD = 128.61 KES
-const USD_TO_KES_RATE = 128.61
+// Exchange rate: 1 USD = 128 KES
+const USD_TO_KES_RATE = 128
 
 export default function CheckoutPage() {
   const { items, getTotalPrice, clearCart } = useCartStore()

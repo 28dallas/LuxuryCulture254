@@ -39,7 +39,7 @@ export function EndOfYearPromo() {
 
           <h1 className="text-5xl lg:text-7xl font-display font-black mb-4 leading-tight">
             <span className="block text-yellow-300">Ramadan/Lent Fasting</span>
-            <span className="block">PROMO SALE.</span>
+            <span className="block">PROMO SALE!</span>
           </h1>
 
           <div className="inline-block bg-black text-white px-8 py-4 rounded-2xl mb-6">

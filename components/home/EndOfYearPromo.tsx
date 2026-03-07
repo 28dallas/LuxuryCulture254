@@ -43,7 +43,7 @@ export function EndOfYearPromo() {
           </h1>
 
           <div className="inline-block bg-black text-white px-8 py-4 rounded-2xl mb-6">
-            <span className="text-4xl lg:text-6xl font-black">UP TO 10% OFF</span>
+            <span className="text-4xl lg:text-6xl font-black">UP TO 20% OFF</span>
           </div>
 
           <p className="text-xl lg:text-2xl mb-8 max-w-3xl mx-auto font-medium">

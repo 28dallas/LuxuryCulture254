@@ -18,6 +18,12 @@ export const metadata: Metadata = {
   keywords: 'sneakers, streetwear, shoes, apparel, fashion, Kicks Kenya, premium footwear',
   authors: [{ name: 'Luxury Culture Team' }],
   robots: 'index, follow',
+  verification: {
+    google: 'ca-pub-7586264347899672',
+  },
+  other: {
+    'google-adsense-account': 'ca-pub-7586264347899672',
+  },
   icons: {
     icon: '/favicon.svg',
     shortcut: '/favicon.svg',

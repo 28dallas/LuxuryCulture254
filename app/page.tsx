@@ -14,10 +14,11 @@ import { Testimonials } from '@/components/home/Testimonials'
 import { StrategicCTA } from '@/components/home/StrategicCTA'
 import { allProducts } from '@/lib/data/all-products'
 import { lux2Products } from '@/lib/data/lux2-products'
+import { lux3Products } from '@/lib/data/lux3-products'
 
-// Get products from actual data with fallback to show some products
-const newDrops = lux2Products.filter(p => p.inStock).slice(0, 4) // Use only in-stock Lux2 products
-const bestsellers = allProducts.slice(4, 8) 
+// Use the original product data so each card shows its real product image.
+const newDrops = lux3Products.filter(p => p.inStock).slice(0, 4)
+const bestsellers = allProducts.slice(4, 8)
 const saleProducts = allProducts.slice(8, 12)
 
 export default function HomePage() {

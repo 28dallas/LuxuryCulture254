@@ -1,15 +1,16 @@
 'use client'
 
-import { useMemo } from 'react'
 import { ProductGrid } from '@/components/product/ProductGrid'
 import { allProducts } from '@/lib/data/all-products'
+import { lux3Products } from '@/lib/data/lux3-products'
 import { Sparkles, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 export default function NewArrivalsPage() {
-  const newArrivalProducts = useMemo(() => {
-    return allProducts.filter(product => product.isNewArrival && product.inStock)
-  }, [])
+  const newArrivalProducts = [
+    ...lux3Products.filter(p => p.inStock),
+    ...allProducts.filter(product => product.isNewArrival && product.inStock),
+  ]
 
   return (
     <div className="min-h-screen bg-primary">

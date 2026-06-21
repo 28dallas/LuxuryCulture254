@@ -1,12 +1,6 @@
 import mongoose from 'mongoose'
 
-const MONGODB_URI = process.env.MONGODB_URI!
-
-if (!MONGODB_URI) {
-  throw new Error(
-    'Please define the MONGODB_URI environment variable inside .env.local'
-  )
-}
+const MONGODB_URI = process.env.MONGODB_URI || ''
 
 interface MongooseCache {
   conn: typeof mongoose | null
@@ -32,6 +26,12 @@ export function isDatabaseSimulated(): boolean {
 }
 
 async function connectDBWithRetry(retries = 3, delay = 2000): Promise<typeof mongoose> {
+  if (!MONGODB_URI) {
+    console.warn('⚠️ MONGODB_URI is not set. Running in simulation mode.')
+    isSimulatedMode = true
+    return null as any
+  }
+
   let lastError: Error | null = null
   
   for (let attempt = 1; attempt <= retries; attempt++) {

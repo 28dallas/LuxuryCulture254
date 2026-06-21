@@ -29,6 +29,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
   const [isLiked, setIsLiked] = useState(false)
   const [selectedSize, setSelectedSize] = useState(product.sizes[0])
   const [isMounted, setIsMounted] = useState(false)
+  const [imageError, setImageError] = useState(false)
   const addItem = useCartStore((state) => state.addItem)
 
   useEffect(() => {
@@ -73,6 +74,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
 
   const rating = getProductRating(product)
   const reviewCount = getReviewCount(product)
+  const imageSrc = product.images?.[0] ? encodeURI(product.images[0]) : '/logo2.png'
 
   return (
     <Link href={`/product/${product.slug}`} className={`group relative block ${className || ''}`}>
@@ -84,12 +86,13 @@ export function ProductCard({ product, className }: ProductCardProps) {
           {/* Product Image */}
           <div className="relative aspect-square overflow-hidden bg-secondary-100">
             <img
-              src={product.images[0] || '/placeholder-shoe.jpg'}
+              src={imageError ? '/logo2.png' : imageSrc}
               alt={product.name}
               className={`w-full h-full object-cover transition-transform duration-300 ${
                 isHovered ? 'scale-110' : 'scale-100'
               }`}
               loading="lazy"
+              onError={() => setImageError(true)}
             />
             
             {/* Badges */}

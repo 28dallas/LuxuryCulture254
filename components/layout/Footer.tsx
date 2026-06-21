@@ -29,23 +29,23 @@ export function Footer() {
 
   const companyLinks = [
     { name: 'About Us', href: '/about' },
-    { name: 'Careers', href: '/careers' },
-    { name: 'Press', href: '/press' },
-    { name: 'Sustainability', href: '/sustainability' },
+    { name: 'Careers', href: '/about' },
+    { name: 'Press', href: '/about' },
+    { name: 'Sustainability', href: '/about' },
   ]
 
   const resourceLinks = [
     { name: 'Size Guide', href: '/size-guide' },
     { name: 'Shipping Info', href: '/shipping' },
     { name: 'Returns & Exchanges', href: '/returns' },
-    { name: 'FAQ', href: '/faq' },
+    { name: 'FAQ', href: '/shipping' },
   ]
 
   const legalLinks = [
     { name: 'Privacy Policy', href: '/privacy' },
     { name: 'Terms of Service', href: '/terms' },
-    { name: 'Cookie Policy', href: '/cookies' },
-    { name: 'Refund Policy', href: '/refunds' },
+    { name: 'Cookie Policy', href: '/privacy' },
+    { name: 'Refund Policy', href: '/returns' },
   ]
 
   const socialLinks = [

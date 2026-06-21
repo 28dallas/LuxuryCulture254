@@ -58,7 +58,7 @@ export default function AccountPage() {
 
   useEffect(() => {
     if (status === 'unauthenticated') {
-      router.push('/auth/signin?callbackUrl=/account')
+      router.replace('/auth/signin?callbackUrl=/account')
     } else if (status === 'authenticated') {
       fetchUserData()
     }
@@ -150,7 +150,14 @@ export default function AccountPage() {
   }
 
   if (!session) {
-    return null
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="text-center">
+          <p className="text-lg font-medium text-gray-900 mb-2">Redirecting to sign in...</p>
+          <p className="text-sm text-gray-500">You’ll be taken to the login page shortly.</p>
+        </div>
+      </div>
+    )
   }
 
   return (

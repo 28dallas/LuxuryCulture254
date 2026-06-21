@@ -34,20 +34,20 @@ export function EndOfYearPromo() {
         <div className="container-custom text-center">
           <div className="inline-flex items-center gap-2 bg-yellow-400 text-black px-4 py-2 rounded-full text-sm font-bold mb-6">
             <Clock className="h-4 w-4" />
-            LIMITED TIME OFFER
+            NEW SEASON DROP
           </div>
 
           <h1 className="text-5xl lg:text-7xl font-display font-black mb-4 leading-tight">
-            <span className="block text-yellow-300">Ramadan/Lent Fasting</span>
-            <span className="block">PROMO SALE!</span>
+            <span className="block text-yellow-300">CURATED</span>
+            <span className="block">ARRIVALS</span>
           </h1>
 
           <div className="inline-block bg-black text-white px-8 py-4 rounded-2xl mb-6">
-            <span className="text-4xl lg:text-6xl font-black">UP TO 20% OFF</span>
+            <span className="text-4xl lg:text-6xl font-black">PREMIUM STREETWEAR</span>
           </div>
 
           <p className="text-xl lg:text-2xl mb-8 max-w-3xl mx-auto font-medium">
-            The Offer sale of the year! Premium sneakers, streetwear & accessories at unbeatable prices.
+            Discover fresh sneakers, bold essentials, and statement pieces selected for the season.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -59,7 +59,7 @@ export function EndOfYearPromo() {
               <ArrowRight className="h-5 w-5" />
             </Link>
             <Link 
-              href="" 
+              href="/new-arrivals" 
               className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-red-600 transition-all duration-300"
             >
               VIEW NEW ARRIVALS

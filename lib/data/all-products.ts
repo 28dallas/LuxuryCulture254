@@ -1,6 +1,5 @@
 import { Product } from '@/types'
 import { lux2Products } from './lux2-products'
-import { newDropProducts } from './newdrop-products'
 
 // 53 products with names and prices from Luxury Culture Sneaker Prices list
 export const allProducts: Product[] = [
@@ -48,8 +47,7 @@ export const allProducts: Product[] = [
  
   
   
-  ...lux2Products,
-  ...newDropProducts
+  ...lux2Products
 ]
 
 export const brands = ['Nike', 'Jordan', 'Adidas', 'ASICS', 'Timberland', 'Xuec']

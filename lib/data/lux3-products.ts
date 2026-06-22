@@ -5,7 +5,7 @@ export const lux3Products: Product[] = [
     id: 'lux3-001',
     name: 'Adidas Samba LT Cow Print',
     slug: 'adidas-samba-lt-cow-print',
-    price: 437,
+    price: 350,
     images: [
       '/IMG/Lux3/Adidas samba Lt Cow print.webp',
       '/IMG/Lux3/Adidas samba Lt Cow print 2.webp',
@@ -68,7 +68,7 @@ export const lux3Products: Product[] = [
     id: 'lux3-004',
     name: "Diesel SA-Bloop",
     slug: 'diesel-sa-bloop',
-    price: 437,
+    price: 350,
     images: ["/IMG/Lux3/DIESEL SA BLOOP.webp"],
     category: 'sneakers' as const,
     gender: 'unisex',

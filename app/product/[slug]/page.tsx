@@ -9,6 +9,8 @@ import { Button } from '@/components/ui/Button'
 import { Minus, Plus, ShoppingCart, Heart, Share2, ChevronRight } from 'lucide-react'
 import { allProducts } from '@/lib/data/all-products'
 import { lux2Products } from '@/lib/data/lux2-products'
+import { lux3Products } from '@/lib/data/lux3-products'
+import { newDropProducts } from '@/lib/data/newdrop-products'
 
 export default function ProductDetailPage() {
   const params = useParams()
@@ -18,8 +20,7 @@ export default function ProductDetailPage() {
   const [quantity, setQuantity] = useState(1)
   const [selectedImage, setSelectedImage] = useState(0)
 
-  // Combine all products to include Lux2 products
-  const allAvailableProducts = [...allProducts, ...lux2Products]
+  const allAvailableProducts = [...allProducts, ...lux2Products, ...lux3Products, ...newDropProducts]
   const product = allAvailableProducts.find(p => p.slug === params.slug)
 
   if (!product) {

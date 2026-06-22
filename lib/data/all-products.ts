@@ -1,5 +1,6 @@
 import { Product } from '@/types'
 import { lux2Products } from './lux2-products'
+import { newDropProducts } from './newdrop-products'
 
 // 53 products with names and prices from Luxury Culture Sneaker Prices list
 export const allProducts: Product[] = [
@@ -26,7 +27,7 @@ export const allProducts: Product[] = [
   { id: '26', name: 'NIKE DUNK LOW PLATINUM TINT JUNIPER FOG(Size)-43', slug: 'nike-dunk-low-crocodile-team-red', description: 'LUXURY CULTURE.', price: 750, brand: 'Nike', category: 'sneakers', gender: 'unisex', sizes: ['43'], colors: ['Red'], images: ['/IMG/latest/photo_2026-01-09_09-26-33.jpg'], inStock: true, isOnSale: false, isBestseller: false, isNewArrival: true, tags: ['dunk', 'crocodile', 'team red'], createdAt: '2024-01-26', updatedAt: '2024-01-26' },
   { id: '27', name: 'AIR JORDAN 5 RETRO AIR MEDIUM SOFT PINK(Size)-45', slug: 'nike-dunk-low-og-qs', description: 'Nike Dunk Low OG Quickstrike edition.', price: 350, brand: 'Nike', category: 'sneakers', gender: 'unisex', sizes: ['45'], colors: ['White/Black'], images: ['/IMG/latest/photo_2026-01-09_09-26-35.jpg'], inStock: true, isOnSale: false, isBestseller: false, isNewArrival: true, tags: ['dunk', 'og', 'qs'], createdAt: '2024-01-27', updatedAt: '2024-01-27' },
   { id: '28', name: 'AIR JORDAN 5 RETRO WHAT THE(Size)-43', slug: 'nike-dunk-low-platinum-tint-juniper-fog', description: 'Nike Dunk Low in Platinum Tint Juniper FOG colorway.', price: 750, brand: 'Nike', category: 'sneakers', gender: 'unisex', sizes: ['43'], colors: ['Grey/Green'], images: ['/IMG/latest/photo_2026-01-09_09-26-37.jpg'], inStock: true, isOnSale: false, isBestseller: false, isNewArrival: true, tags: ['dunk', 'platinum tint'], createdAt: '2024-01-28', updatedAt: '2024-01-28' },
-  { id: '29', name: 'AIR JORDAN 5 RETRO Medium Soft Pink (Size-44)', slug: 'nike-dunk-low-qs-co-jo-what-the-2024', description: 'LUXURY CULTURE .', price: 600, brand: 'Nike', category: 'sneakers', gender: 'unisex', sizes: ['44'], colors: ['Multi-Color'], images: ['/IMG/latest/photo_2026-01-09_09-26-38.jpg'], inStock: true, isOnSale: false, isBestseller: false, isNewArrival: true, tags: ['dunk', 'what the', '2024'], createdAt: '2024-01-29', updatedAt: '2024-01-29' },
+  { id: '29', name: 'AIR JORDAN 5 RETRO Medium Soft Pink (Size-44)', slug: 'nike-dunk-low-qs-co-jo-what-the-2024', description: 'LUXURY CULTURE .', price: 650, brand: 'Nike', category: 'sneakers', gender: 'unisex', sizes: ['44'], colors: ['Multi-Color'], images: ['/IMG/latest/photo_2026-01-09_09-26-38.jpg'], inStock: true, isOnSale: false, isBestseller: false, isNewArrival: true, tags: ['dunk', 'what the', '2024'], createdAt: '2024-01-29', updatedAt: '2024-01-29' },
   { id: '30', name: 'AIR TECH CHALLANGE 11 QS(Size)-43', slug: 'nike-dunk-low-retro-lettering', description: 'LUXURY CULTURE.', price: 300, brand: 'Nike', category: 'sneakers', gender: 'unisex', sizes: ['43'], colors: ['White/Black'], images: ['/IMG/latest/photo_2026-01-09_09-26-39.jpg'], inStock: true, isOnSale: false, isBestseller: false, isNewArrival: true, tags: ['dunk', 'lettering'], createdAt: '2024-01-30', updatedAt: '2024-01-30' },
 
   { id: '32', name: 'AIR JORDAN 1 RETRO LOW OG ZION VOODOO(Size -43)', slug: 'nike-dunk-low-retro-ltd-wizard', description: 'LUXURY CULTURE.', price: 500, brand: 'Nike', category: 'sneakers', gender: 'unisex', sizes: ['43'], colors: ['Black/White'], images: ['/IMG/latest/photo_2026-01-09_09-26-41.jpg'], inStock: true, isOnSale: false, isBestseller: false, isNewArrival: true, tags: ['dunk', 'wizard'], createdAt: '2024-02-01', updatedAt: '2024-02-01' },
@@ -41,13 +42,14 @@ export const allProducts: Product[] = [
   { id: '41', name: 'AIR FORCE 1 07 LOW SUNDIAL "Let Me Be Ja"(Size)-44', slug: 'nike-sb-dunk-low-laser-blue', description: 'Nike SB Dunk Low in Laser Blue colorway.', price: 550, brand: 'Nike', category: 'sneakers', gender: 'unisex', sizes: ['44'], colors: ['Blue'], images: ['/IMG/latest/photo_2026-01-09_09-26-50.jpg'], inStock: true, isOnSale: false, isBestseller: false, isNewArrival: true, tags: ['sb dunk', 'laser blue'], createdAt: '2024-02-10', updatedAt: '2024-02-10' },
   { id: '42', name: 'AIR FORCE 1 07 LOW AZTEC(Size)-42', slug: 'nike-sb-dunk-low-pro-black-white-gum', description: 'Nike SB Dunk Low Pro in Black/White with GUM sole.', price: 400, brand: 'Nike', category: 'sneakers', gender: 'unisex', sizes: ['42'], colors: ['Black/White'], images: ['/IMG/latest/photo_2026-01-09_09-26-51.jpg'], inStock: true, isOnSale: false, isBestseller: false, isNewArrival: true, tags: ['sb dunk', 'pro', 'gum'], createdAt: '2024-02-11', updatedAt: '2024-02-11' },
   
-  { id: '44', name: 'ADIDAS SAMBA LT YELLOW (Size)-42 2/3', slug: 'nike-sb-dunk-low-pro-light-carbon-sesame-monarch', description: 'Nike SB Dunk Low PRO LIGHT Carbon Sesame Monarch.', price: 350, brand: 'Nike', category: 'sneakers', gender: 'unisex', sizes: ['42'], colors: ['Carbon/Sesame'], images: ['/IMG/latest/photo_2026-01-09_09-26-53.jpg'], inStock: true, isOnSale: false, isBestseller: false, isNewArrival: true, tags: ['sb dunk', 'pro', 'monarch'], createdAt: '2024-02-13', updatedAt: '2024-02-13' },
+  { id: '44', name: 'ADIDAS SAMBA LT YELLOW (Size)-42 2/3', slug: 'nike-sb-dunk-low-pro-light-carbon-sesame-monarch', description: 'Nike SB Dunk Low PRO LIGHT Carbon Sesame Monarch.', price: 300, brand: 'Nike', category: 'sneakers', gender: 'unisex', sizes: ['42'], colors: ['Carbon/Sesame'], images: ['/IMG/latest/photo_2026-01-09_09-26-53.jpg'], inStock: true, isOnSale: false, isBestseller: false, isNewArrival: true, tags: ['sb dunk', 'pro', 'monarch'], createdAt: '2024-02-13', updatedAt: '2024-02-13' },
   
   { id: '49', name: 'NIKE SB DUNK LOW LASER BLUE(Size)43', slug: 'nike-sb-dunk-low-supreme-94-white-1', description: 'LUXURY CULTURE', price: 400, brand: 'Nike', category: 'sneakers', gender: 'unisex', sizes: ['43'], colors: ['White'], images: ['/IMG/latest/photo_2026-01-09_09-24-58.jpg'], inStock: true, isOnSale: false, isBestseller: false, isNewArrival: true, tags: ['sb dunk', 'supreme', '94'], createdAt: '2024-02-18', updatedAt: '2024-02-18' },
  
   
   
-  ...lux2Products
+  ...lux2Products,
+  ...newDropProducts
 ]
 
 export const brands = ['Nike', 'Jordan', 'Adidas', 'ASICS', 'Timberland', 'Xuec']

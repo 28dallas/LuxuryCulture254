@@ -15,9 +15,10 @@ import { StrategicCTA } from '@/components/home/StrategicCTA'
 import { allProducts } from '@/lib/data/all-products'
 import { lux2Products } from '@/lib/data/lux2-products'
 import { lux3Products } from '@/lib/data/lux3-products'
+import { newDropProducts } from '@/lib/data/newdrop-products'
 
-// Use the original product data so each card shows its real product image.
-const newDrops = lux3Products.filter(p => p.inStock).slice(0, 4)
+// New drop first, then lux3
+const newDrops = [...newDropProducts, ...lux3Products.filter(p => p.inStock)].slice(0, 4)
 const bestsellers = allProducts.slice(4, 8)
 const saleProducts = allProducts.slice(8, 12)
 

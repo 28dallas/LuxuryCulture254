@@ -3,11 +3,13 @@
 import { ProductGrid } from '@/components/product/ProductGrid'
 import { allProducts } from '@/lib/data/all-products'
 import { lux3Products } from '@/lib/data/lux3-products'
+import { newDropProducts } from '@/lib/data/newdrop-products'
 import { Sparkles, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 export default function NewArrivalsPage() {
   const newArrivalProducts = [
+    ...newDropProducts,
     ...lux3Products.filter(p => p.inStock),
     ...allProducts.filter(product => product.isNewArrival && product.inStock),
   ]
@@ -45,9 +47,9 @@ export default function NewArrivalsPage() {
             </div>
             <div className="hidden lg:block">
               <img 
-                src="/logo2.png" 
+                src="/IMG/LuxLogo/LuxuryCulture_Logo_Red.png" 
                 alt="New Arrivals" 
-                className="h-32 w-auto opacity-20"
+                className="h-32 w-auto opacity-80"
               />
             </div>
           </div>

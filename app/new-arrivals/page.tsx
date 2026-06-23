@@ -47,9 +47,9 @@ export default function NewArrivalsPage() {
             </div>
             <div className="hidden lg:block">
               <img 
-                src="/IMG/LuxLogo/LuxuryCulture_Logo_Red.png" 
+                src="/IMG/LuxLogo/background/LuxuryCulture_Logo_Red-removebg-preview.png" 
                 alt="New Arrivals" 
-                className="h-32 w-auto opacity-80"
+                className="h-32 w-auto opacity-90"
               />
             </div>
           </div>

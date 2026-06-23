@@ -81,17 +81,12 @@ export function Header() {
             </button>
 
             {/* Logo */}
-            <Link href="/" className="flex items-center space-x-1.5 group flex-shrink-0">
+            <Link href="/" className="flex items-center group flex-shrink-0">
               <img
-                src="/IMG/logo3.png"
+                src="/IMG/LuxLogo/background/LuxuryCulture_Logo_Light-removebg-preview.png"
                 alt="Luxury Culture Logo"
-                className="h-12 w-auto lg:h-20 transition-transform duration-300 group-hover:scale-105 flex-shrink-0"
+                className="h-12 w-auto lg:h-16 transition-transform duration-300 group-hover:scale-105 flex-shrink-0"
               />
-              <div className="bg-gradient-to-br from-accent to-red-700 text-white px-2.5 py-1.5 lg:px-4 lg:py-2.5 rounded-md lg:rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 group-hover:from-red-600 group-hover:to-red-800 border border-white/20 flex-shrink-0 whitespace-nowrap">
-                <div className="text-[11px] md:text-xs lg:text-sm font-bold tracking-wider uppercase drop-shadow-md">
-                  Luxury Culture
-                </div>
-              </div>
             </Link>
 
             {/* Desktop Navigation */}

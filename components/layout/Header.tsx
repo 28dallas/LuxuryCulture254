@@ -85,7 +85,7 @@ export function Header() {
               <img
                 src="/IMG/LuxLogo/background/LuxuryCulture_Logo_Light-removebg-preview.png"
                 alt="Luxury Culture Logo"
-                className="h-12 w-auto lg:h-16 transition-transform duration-300 group-hover:scale-105 flex-shrink-0"
+                className="h-20 w-auto lg:h-32 transition-transform duration-300 group-hover:scale-105 flex-shrink-0"
               />
             </Link>
 

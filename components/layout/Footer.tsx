@@ -145,7 +145,7 @@ export function Footer() {
               <img
                 src="/IMG/LuxLogo/background/LuxuryCulture_Logo_Dark-removebg-preview.png"
                 alt="Luxury Culture"
-                className="h-16 w-auto mb-6"
+                className="h-36 w-auto mb-6"
               />
               <p className="text-sm mb-6 opacity-90">
                 Your ultimate destination for premium sneakers and streetwear. 

@@ -10,7 +10,7 @@ export const newDropProducts: Product[] = [
     category: 'sneakers' as const,
     gender: 'unisex',
     brand: 'Adidas',
-    sizes: ['41'],
+    sizes: ['42'],
     colors: ['Aurora Ivy'],
     description: 'Adidas Samba OG Aurora Ivy Core — premium suede construction with the iconic Samba silhouette in a fresh Aurora Ivy colorway.',
     features: ['Premium suede upper', 'Gum rubber outsole', 'Classic 3-stripes design'],

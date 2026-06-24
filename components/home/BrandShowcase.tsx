@@ -63,8 +63,8 @@ export function BrandShowcase() {
           <div className="flex animate-scroll space-x-12 lg:space-x-16">
             {[...brands, ...brands].map((brand, index) => (
               <div key={`${brand.name}-${index}`} className="flex-shrink-0 text-center group">
-                <div className="w-24 h-24 lg:w-28 lg:h-28 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 border-2 border-gray-200 shadow-lg group-hover:shadow-2xl group-hover:border-accent transition-all duration-300 group-hover:scale-110">
-                  <div className="text-accent text-3xl group-hover:scale-125 transition-transform duration-300">{brand.logo}</div>
+                <div className="w-28 h-28 lg:w-32 lg:h-32 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 border-2 border-gray-200 shadow-lg group-hover:shadow-2xl group-hover:border-accent transition-all duration-300 group-hover:scale-110">
+                  <div className="text-accent text-4xl lg:text-5xl group-hover:scale-125 transition-transform duration-300">{brand.logo}</div>
                 </div>
                 <p className="text-base font-bold text-gray-800 group-hover:text-accent transition-colors">{brand.name}</p>
               </div>

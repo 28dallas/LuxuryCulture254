@@ -138,7 +138,7 @@ export default function SignUpPage() {
           {/* Logo/Header */}
           <div className="text-center mb-8">
             <Link href="/" className="inline-flex items-center space-x-2 mb-6">
-              <img src="/IMG/logo3.png" alt="Luxury Culture" className="h-12" />
+              <img src="/IMG/logo3.png" alt="Luxury Culture" className="h-16" />
             </Link>
             <h1 className="text-2xl font-bold text-black">Create Account</h1>
             <p className="text-secondary-600 mt-2">Join Luxury Culture today</p>

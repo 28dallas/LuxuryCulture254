@@ -49,7 +49,7 @@ export default function NewArrivalsPage() {
               <img 
                 src="/IMG/LuxLogo/background/LuxuryCulture_Logo_Red-removebg-preview.png" 
                 alt="New Arrivals" 
-                className="h-32 w-auto opacity-90"
+                className="h-40 lg:h-48 w-auto opacity-90"
               />
             </div>
           </div>

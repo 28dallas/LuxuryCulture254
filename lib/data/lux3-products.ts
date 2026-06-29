@@ -188,7 +188,7 @@ export const lux3Products: Product[] = [
     id: 'lux3-010',
     name: 'UGG Goldencoast Strap Slide',
     slug: 'ugg-goldencoast-strap-slide',
-    price: 350,
+    price: 400,
     images: ['/IMG/Lux3/UGG GOLDENCOAST STRAP SLIDE .jpeg'],
     category: 'footwear' as const,
     gender: 'unisex',

@@ -18,7 +18,7 @@ import { lux3Products } from '@/lib/data/lux3-products'
 import { newDropProducts } from '@/lib/data/newdrop-products'
 
 // New drop first, then lux3
-const newDrops = [...newDropProducts, ...lux3Products.filter(p => p.inStock)].slice(0, 4)
+const newDrops = [...newDropProducts, ...lux3Products.filter(p => p.inStock)].slice(0, 8)
 const bestsellers = allProducts.slice(4, 8)
 const saleProducts = allProducts.slice(8, 12)
 

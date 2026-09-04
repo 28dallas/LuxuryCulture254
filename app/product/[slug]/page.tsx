@@ -37,6 +37,11 @@ export default function ProductDetailPage() {
   }
 
   const handleAddToCart = () => {
+    if (!product.inStock) {
+      alert('This item is currently sold out')
+      return
+    }
+
     if (!selectedSize) {
       alert('Please select a size')
       return
@@ -179,9 +184,10 @@ export default function ProductDetailPage() {
               <Button
                 onClick={handleAddToCart}
                 className="w-full flex items-center justify-center space-x-2"
+                disabled={!product.inStock}
               >
                 <ShoppingCart size={20} />
-                <span>ADD TO CART</span>
+                <span>{product.inStock ? 'ADD TO CART' : 'SOLD OUT'}</span>
               </Button>
 
               <div className="flex space-x-4">
@@ -220,7 +226,9 @@ export default function ProductDetailPage() {
                 </div>
                 <div className="flex justify-between">
                   <span>Stock:</span>
-                  <span className="text-green-600">In Stock</span>
+                  <span className={product.inStock ? 'text-green-600' : 'text-secondary-600'}>
+                    {product.inStock ? 'In Stock' : 'Sold Out'}
+                  </span>
                 </div>
               </div>
             </div>
